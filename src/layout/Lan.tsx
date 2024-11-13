@@ -9,7 +9,7 @@ const Lan = () => {
       {language.map((item, index) => (
         <button
           key={index}
-          className={`${item.title === lan ? '' : 'opacity-40'} hover:opacity-100`}
+          className={`${item.title === lan ? 'underline' : ' '} hover:underline`}
           onClick={() => setLan(item.title)}
         >
           {item.title}
