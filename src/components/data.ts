@@ -2,44 +2,44 @@ export const menu = [
   {
     title_es: 'Acerca de',
     title_en: 'About',
-    url: '/acerca-de',
-    section: []
+    url: '',
+    tag: '#acercade'
   },
   {
     title_es: 'Seminarios',
     title_en: 'Seminars',
     url: '/seminarios',
-    section: []
+    tag: ''
   },
   {
-    title_es: 'Recidencias',
-    title_en: 'Recencies',
-    url: '/recidencias',
-    section: []
+    title_es: 'Residencias',
+    title_en: 'Residencies',
+    url: '/residencias',
+    tag: ''
   },
   {
     title_es: 'Cenas',
-    title_en: 'Cakes',
+    title_en: 'Dinners',
     url: '/cenas',
-    section: []
+    tag: ''
   },
   {
     title_es: 'Calendario',
     title_en: 'Calendar',
     url: '/calendario',
-    section: []
+    tag: ''
   },
   {
     title_es: 'Apoyo',
     title_en: 'Support',
     url: '/apoyo',
-    section: []
+    tag: '#apoyo'
   },
   {
     title_es: 'Contacto',
     title_en: 'Contact',
     url: '/contacto',
-    section: []
+    tag: '#contacto'
   }
 ]
 

@@ -19,7 +19,7 @@ const Item = ({ item }: Props) => {
         />
       </div>
       <div className='text-white flex flex-col gap-y-3 pt-2 pb-3 px-12 text-center'>
-        <h2 className='text-2xl font-condensed'>{item.title}</h2>
+        <h2 className='text-3xl font-condensed'>{item.title}</h2>
         <p className='whitespace-break-spaces text-sm'>{item.description}</p>
       </div>
     </article>

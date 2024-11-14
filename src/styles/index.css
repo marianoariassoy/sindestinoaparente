@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 .border-primary {
-  box-shadow: 0 0 15px 10px #eaf88d;
+  box-shadow: 0 0 8px 8px #eaf88d;
 }
 .border-secondary {
-  box-shadow: 0 0 10px 10px #ed6e58;
+  box-shadow: 0 0 8px 12px #ed6e58;
 }
 .border-tertiary {
-  box-shadow: 0 0 10px 10px #e8b4c8;
+  box-shadow: 0 0 8px 12px #e8b4c8;
 }
 .border-quaternary {
-  box-shadow: 0 0 10px 10px #4ca3cf;
+  box-shadow: 0 0 8px 12px #4ca3cf;
+}
+
+.translate {
+  transform: translateX(110%);
 }
 
 .close-button {
@@ -44,7 +48,4 @@
 }
 .close-button .cross::after {
   transform: rotate(-45deg);
-}
-.close-button:hover {
-  opacity: 0.6;
 }

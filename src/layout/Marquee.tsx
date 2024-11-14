@@ -4,11 +4,11 @@ import { useDataContext } from '../context/useDataContext'
 const Marquesina = () => {
   const { lan } = useDataContext()
   return (
-    <div className='fixed bottom-0 left-0 w-full z-10'>
+    <div className='fixed bottom-0 left-0 w-full z-10 bg-white'>
       <Marquee
         speed={50}
         direction='left'
-        className='text-7xl bg-white p-1 uppercase font-condensed whitespace-nowrap'
+        className='text-7xl p-1 uppercase font-condensed whitespace-nowrap opacity-0 fade-in-delay'
       >
         {lan === 'ESP'
           ? '¿Es posible crear comunidades en este mundo fragmentado?'

@@ -5,11 +5,11 @@ const Lan = () => {
   const { lan, setLan } = useDataContext()
 
   return (
-    <nav className='border-t border-b border-black flex justify-between py-1 font-bold font-condensed'>
+    <nav className='border-t border-b border-black justify-between py-1 font-bold font-condensed hidden lg:flex'>
       {language.map((item, index) => (
         <button
           key={index}
-          className={`${item.title === lan ? 'underline' : ' '} hover:underline`}
+          className={`underline-offset-2 ${item.title === lan ? 'underline' : ' '} hover:underline`}
           onClick={() => setLan(item.title)}
         >
           {item.title}

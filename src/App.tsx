@@ -1,7 +1,10 @@
 import { Route, Switch } from 'wouter'
 import Landing from './pages/landing'
 import Home from './pages/home'
-import Error from './pages/error'
+import Seminarios from './pages/seminarios'
+import Residencias from './pages/residencias'
+import Cenas from './pages/cenas'
+import Calendario from './pages/calendario'
 
 function App() {
   return (
@@ -14,8 +17,24 @@ function App() {
         path='/home'
         component={Home}
       />
+      <Route
+        path='/seminarios'
+        component={Seminarios}
+      />
+      <Route
+        path='/residencias'
+        component={Residencias}
+      />
+      <Route
+        path='/cenas'
+        component={Cenas}
+      />
+      <Route
+        path='/calendario'
+        component={Calendario}
+      />
 
-      <Route component={Error} />
+      <Route component={Landing} />
     </Switch>
   )
 }

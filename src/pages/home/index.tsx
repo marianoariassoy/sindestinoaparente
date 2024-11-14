@@ -57,7 +57,7 @@ Fecha de residencia: Junio 2025`,
         title1='SIN DESTINO APARENTE'
         title2={time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}
       />
-      <div className='grid grid-cols-3 items-center justify-center gap-x-6 p-6 h-full max-w-7xl m-auto'>
+      <div className='grid lg:grid-cols-3 items-center justify-center gap-6 p-6 h-full max-w-7xl m-auto'>
         {data.map((item, index) => (
           <Item
             key={index}

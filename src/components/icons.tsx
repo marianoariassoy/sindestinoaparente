@@ -11,3 +11,29 @@ export const Forward = () => {
     </svg>
   )
 }
+
+export const Right = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      height='1em'
+      width='1em'
+      viewBox='0 0 14.8 11.8'
+    >
+      <line
+        y1='5.9'
+        x2='14'
+        y2='5.9'
+        fill='none'
+        stroke='#000'
+        strokeMiterlimit='10'
+      />
+      <polyline
+        fill='none'
+        stroke='#000'
+        strokeMiterlimit='10'
+        points='8.5 .4 14.1 5.9 8.5 11.4'
+      />
+    </svg>
+  )
+}
