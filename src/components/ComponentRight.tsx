@@ -10,7 +10,7 @@ const ComponentRight = ({ data, children, title }) => {
   }
 
   return (
-    <div className='lg:w-2/5 pb-12 fixed right-0 h-screen overflow-y-scroll bg-white z-40'>
+    <div className='lg:w-[35%] pb-12 fixed right-0 h-screen overflow-y-scroll bg-white z-40'>
       <div className='border-t border-black mt-2 py-1 flex justify-between items-start px-6'>
         <h3>{title}</h3>
         <button

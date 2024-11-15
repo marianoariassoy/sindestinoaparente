@@ -7,7 +7,7 @@ const ComponentLeft = ({ images }: { images: string[] }) => {
 
   return (
     <>
-      <div className='lg:w-3/5 relative'>
+      <div className='lg:w-[65%] relative'>
         <div className='flex flex-col'>
           {images.map((image, index) => (
             <ItemModal

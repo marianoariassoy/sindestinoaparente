@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Close } from './icons'
 
 const closeAside = (id: string) => () => {
@@ -19,12 +20,15 @@ const Aside = ({
   id: string
   borderColor: string
 }) => {
-  const metaTags = document.querySelectorAll('meta')
-  metaTags.forEach(meta => {
-    if (meta.getAttribute('name') === 'theme-color') {
-      meta.setAttribute('content', bgColor)
-    }
-  })
+  useEffect(() => {
+    const metaTags = document.querySelectorAll('meta')
+    metaTags.forEach(meta => {
+      if (meta.getAttribute('name') === 'theme-color') {
+        meta.setAttribute('content', bgColor)
+      }
+    })
+    // return () => {}
+  }, [bgColor])
 
   return (
     <div
