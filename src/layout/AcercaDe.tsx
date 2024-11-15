@@ -45,7 +45,7 @@ En 2018, Zmud creó Sin Destino Aparente, grupos de lectura y pensamiento críti
   return (
     <Aside
       title={lan === 'ESP' ? 'Acerca de' : 'About'}
-      bgColor='bg-tertiary'
+      bgColor='#e8b4c8'
       borderColor='border-tertiary'
       id='acercade'
     >

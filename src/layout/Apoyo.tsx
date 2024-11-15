@@ -77,7 +77,7 @@ const Contact = () => {
   return (
     <Aside
       title={lan === 'ESP' ? 'Apoyo' : 'Support'}
-      bgColor='bg-secondary'
+      bgColor='#ed6e58'
       borderColor='border-secondary'
       id='apoyo'
     >
