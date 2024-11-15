@@ -6,18 +6,14 @@ import Apoyo from './Apoyo'
 import AcercaDe from './AcercaDe'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const location = useLocation()
-
-  console.log(location)
+  const [location] = useLocation()
 
   return (
     <>
-      <div className='flex flex-col lg:flex-row min-h-screen'>
-        <Header />
-        <main className='flex-1 relative'>{children}</main>
-      </div>
+      <Header />
+      <main>{children}</main>
 
-      {location[0] === '/home' && <Marquesina />}
+      {location === '/home' && <Marquesina />}
       <Contact />
       <Apoyo />
       <AcercaDe />

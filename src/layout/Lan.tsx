@@ -5,7 +5,7 @@ const Lan = () => {
   const { lan, setLan } = useDataContext()
 
   return (
-    <nav className='border-t border-b border-black justify-between py-1 font-bold font-condensed hidden lg:flex'>
+    <nav className='w-full lg:border-t border-b border-black justify-between py-1 font-bold font-condensed flex'>
       {language.map((item, index) => (
         <button
           key={index}

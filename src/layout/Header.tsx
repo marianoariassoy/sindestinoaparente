@@ -1,15 +1,25 @@
 import { Link } from 'wouter'
 import Nav from './Nav'
-import Lan from './Lan'
 
 const Header = () => {
+  const openMenu = () => {
+    document.querySelector('#menu')?.classList.toggle('hidden')
+  }
+
   return (
-    <header className='w-full lg:max-w-60 flex flex-col gap-y-12 p-3 bg-white'>
+    <header className='fixed top-0 left-0 w-full flex justify-between items-end lg:w-60 z-40 p-3 bg-white lg:items-start lg:h-screen'>
       <Link to='/home'>
-        <h1 className='font-condensed text-xl lg:text-3xl hover:text-primary'>SDA</h1>
+        <h1 className='font-condensed text-3xl hover:text-primary'>SDA</h1>
       </Link>
+
       <Nav />
-      <Lan />
+
+      <button
+        className='text-sm lg:hidden'
+        onClick={openMenu}
+      >
+        MENÚ
+      </button>
     </header>
   )
 }

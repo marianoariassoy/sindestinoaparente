@@ -26,7 +26,7 @@ const Contact = () => {
       borderColor='border-quaternary'
       id='contacto'
     >
-      <div className='flex flex-col gap-y-12 border-t border-black pt-6'>
+      <div className='flex flex-col gap-y-12 border-t border-black pt-6 pr-6 lg:pr-12'>
         <div>
           {lan === 'ESP' ? texts.ESP.text1 : texts.ENG.text1}
           <a
@@ -49,7 +49,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
-      <div className='border-t border-black pt-6'>
+      <div className='border-t border-black pt-6 pr-1'>
         <div>{lan === 'ESP' ? texts.ESP.text4 : texts.ENG.text4}</div>
         <div className='font-sans flex justify-between text-base mt-3 max-w-md'>
           <div>Contacto</div>

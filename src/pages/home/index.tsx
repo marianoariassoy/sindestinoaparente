@@ -13,18 +13,21 @@ const Index = () => {
     {
       title: 'Seminarios',
       description: 'Pronto compartiremos +  información. Mantente atentx a nuestras redes sociales',
-      image: '/images/1.jpg'
+      image: '/images/1.jpg',
+      url: '/seminarios'
     },
     {
       title: 'Residencias',
       description: `Fecha de lanzamiento: Marzo 2025
 Fecha de residencia: Junio 2025`,
-      image: '/images/2.jpg'
+      image: '/images/2.jpg',
+      url: '/residencias'
     },
     {
       title: 'Club de cenas',
       description: 'Pronto compartiremos +  información. Mantente atentx a nuestras redes sociales!',
-      image: '/images/3.jpg'
+      image: '/images/3.jpg',
+      url: '/cenas'
     }
   ]
 
@@ -57,14 +60,14 @@ Fecha de residencia: Junio 2025`,
         title1='SIN DESTINO APARENTE'
         title2={time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}
       />
-      <div className='grid lg:grid-cols-3 items-center justify-center gap-6 p-6 h-full max-w-7xl m-auto'>
+      <section className='px-3 py-32 lg:py-0 lg:pl-72 lg:pr-12 grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-8 lg:h-screen'>
         {data.map((item, index) => (
           <Item
             key={index}
             item={item}
           />
         ))}
-      </div>
+      </section>
       <div className='fixed top-0 left-0 w-full h-full -z-10'>
         <ImageComponent
           src={bgimage}

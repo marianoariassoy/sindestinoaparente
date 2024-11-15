@@ -1,4 +1,4 @@
-import CloseButton from '../components/CloseButton'
+import { Close } from './icons'
 
 const closeAside = (id: string) => () => {
   console.log(id)
@@ -21,12 +21,17 @@ const Aside = ({
 }) => {
   return (
     <div
-      className={`p-1 h-full flex flex-col gap-y-12 text-4xl font-condensed ${bgColor} ${borderColor} fixed aside z-50 h-screen w-[36rem] top-0 right-0 translate transition-all overflow-y-scroll`}
+      className={`p-3 lg:p-1 flex flex-col gap-y-12 text-2xl lg:text-4xl font-condensed ${bgColor} ${borderColor} fixed aside z-50 h-screen w-full max-w-[40rem] top-0 right-0 translate transition-all overflow-y-scroll`}
       id={id}
     >
-      <div className='flex justify-between items-center'>
-        <h1 className='text-8xl'>{title}</h1>
-        <CloseButton onClick={closeAside(id)} />
+      <div className='flex justify-between items-center pr-3'>
+        <h1 className='text-6xl lg:text-8xl'>{title}</h1>
+        <button
+          onClick={closeAside(id)}
+          className='hover:opacity-60'
+        >
+          <Close />
+        </button>
       </div>
       {children}
     </div>

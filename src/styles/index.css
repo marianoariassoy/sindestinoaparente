@@ -14,38 +14,6 @@
 .border-quaternary {
   box-shadow: 0 0 8px 12px #4ca3cf;
 }
-
 .translate {
   transform: translateX(110%);
-}
-
-.close-button {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  background: transparent;
-  cursor: pointer;
-  outline: none;
-}
-.close-button .cross {
-  position: relative;
-  width: 40px;
-  height: 40px;
-}
-.close-button .cross::before,
-.close-button .cross::after {
-  content: '';
-  position: absolute;
-  background-color: black; /* Color de la cruz */
-  width: 1px;
-  height: 40px;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.close-button .cross::before {
-  transform: rotate(45deg);
-}
-.close-button .cross::after {
-  transform: rotate(-45deg);
 }

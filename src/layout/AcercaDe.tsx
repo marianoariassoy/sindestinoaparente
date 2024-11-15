@@ -1,4 +1,4 @@
-import AcercaDeItem from './AcercaDeItem'
+import Button from '../components/Button'
 import Aside from '../components/Aside'
 import { useDataContext } from '../context/useDataContext'
 
@@ -49,9 +49,9 @@ En 2018, Zmud creó Sin Destino Aparente, grupos de lectura y pensamiento críti
       borderColor='border-tertiary'
       id='acercade'
     >
-      <div className='flex flex-col gap-y-3 border-t border-black pt-6 pr-12 pb-12'>
+      <div className='flex flex-col gap-y-3 border-t border-black pt-6 pr-3 lg:pr-12 pb-12'>
         {data.map((item, index) => (
-          <AcercaDeItem
+          <Button
             key={index}
             data={item}
           />

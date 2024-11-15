@@ -82,11 +82,11 @@ const Contact = () => {
       id='apoyo'
     >
       <div className='flex gap-x-3 border-t border-black pt-6 text-base pr-6'>
-        <div className='w-[30px] transition-all pt-3'>
+        <div className='w-[22px] lg:w-[30px] transition-all pt-3'>
           <Right />
         </div>
         <div className='flex-1 flex flex-col gap-y-1'>
-          <h1 className='font-condensed text-4xl'>Sin Destino Aparente / Cetácea</h1>
+          <h1 className='font-condensed text-2xl lg:text-4xl'>Sin Destino Aparente / Cetácea</h1>
           <div className='flex flex-col gap-y-3 [&>div>p]:indent-6 [&>div>h3]:indent-6'>
             {items[lan].map((item, index) => (
               <div key={index}>
@@ -99,9 +99,9 @@ const Contact = () => {
       </div>
 
       <div className='flex gap-x-3 border-t border-black text-base pt-6 pr-6 pb-12'>
-        <div className='w-[30px]'></div>
+        <div className='w-[22px] lg:w-[30px]'></div>
         <div className='flex-1 flex flex-col gap-y-1'>
-          <h2 className='font-condensed text-4xl'>{texts[lan].title2}</h2>
+          <h2 className='font-condensed text-2xl lg:text-4xl'>{texts[lan].title2}</h2>
           <div className='flex justify-between gap-x-12'>
             <div>
               <p className='indent-6'>{texts[lan].text1}</p>

@@ -1,17 +1,12 @@
-import { useState } from 'react'
-
-const Header = ({ title1, title2 }: { title1: string; title2: string }) => {
-  const [isOpen, setIsOpen] = useState(true)
-
+const Header = ({ title1 = '', title2 = '' }: { title1: string; title2: string }) => {
   return (
     <header
-      className={`absolute border-t border-black w-full bg-white top-2 flex justify-between gap-3 items-center z-20 text-lg px-3 lg:pl-32 lg:pr-24 cursor-pointer ${
-        isOpen ? '' : 'hidden'
-      }`}
-      onClick={() => setIsOpen(!isOpen)}
+      className='fixed top-20 lg:top-2 left-0 w-full flex 
+      items-start p-1 border-t border-black bg-white gap-3 z-20 text-sm lg:text-base'
     >
-      <div>{title1}</div>
-      <div>{title2}</div>
+      <div className='hidden lg:block lg:w-60'></div>
+      <div className='pl-2 lg:pl-20 lg:w-3/5'>{title1}</div>
+      <div className='pr-2 hidden text-right lg:block w-2/5'>{title2}</div>
     </header>
   )
 }
