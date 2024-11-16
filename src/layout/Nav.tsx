@@ -30,7 +30,7 @@ const Nav = () => {
       className='absolute w-full left-0 top-[3.7rem] px-3 hidden lg:flex flex-col bg-white'
       id='menu'
     >
-      <nav className='lg:my-12'>
+      <nav className='mt-4 lg:my-12'>
         <ul className='flex flex-col [&>li:last-child]:border-b font-bold font-condensed'>
           {menu.map((item, index) => (
             <li

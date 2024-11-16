@@ -38,21 +38,21 @@ const Index = () => {
 
   return (
     <Layout>
-      <section className='flex items-start lg:pl-60'>
+      <section className='flex flex-col-reverse lg:flex-row items-start pt-[4.2rem] lg:pt-0 lg:pl-60'>
+        <ComponentLeft images={images} />
+
         <Header
           title1='Comité, 2024'
           title2=''
         />
 
-        <ComponentLeft images={images} />
-
         <ComponentRight
           data={data}
           title={lan === 'ESP' ? 'Ediciones' : 'Editions'}
         >
-          <div className='flex flex-col gap-y-3 leading-5 max-w-xl'>
-            <h1 className='font-condensed text-3xl indent-9'>Suave Desliz</h1>
-            <div className='[&>p]:indent-9'>
+          <div className='flex flex-col gap-y-3 leading-5 max-w-xl text-sm lg:text-base'>
+            <h1 className='font-condensed text-2xl lg:text-3xl indent-9'>Suave Desliz</h1>
+            <div className='[&>p]:indent-9 pb-6'>
               <p>Comida y arte en el cruce.</p>
               <p>
                 Ciclo de cenas donde mes a mes un artista y un chef son invitadxs a colaborar mutuamente, cruzar sus

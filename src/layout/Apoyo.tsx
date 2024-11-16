@@ -82,7 +82,7 @@ const Contact = () => {
       id='apoyo'
     >
       <div className='flex gap-x-3 border-t border-black pt-6 text-base pr-6'>
-        <div className='w-[22px] lg:w-[30px] transition-all pt-3'>
+        <div className='w-6 transition-all pt-[0.3rem]'>
           <Right />
         </div>
         <div className='flex-1 flex flex-col gap-y-1'>

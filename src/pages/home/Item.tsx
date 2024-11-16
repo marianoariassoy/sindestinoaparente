@@ -17,7 +17,7 @@ const Item = ({ item }: Props) => {
         to={item.url}
         className='absolute top-0 left-0 w-full h-full lg:bg-primary opacity-0 mix-blend-exclusion hover:opacity-50 cursor-pointer'
       ></Link>
-      <div className='aspect-[5/2] lg:aspect-[4/3]'>
+      <div className='aspect-[5/2] lg:aspect-[4/3] overflow-hidden'>
         <ImageComponent
           src={item.image}
           alt='Imagen principal'

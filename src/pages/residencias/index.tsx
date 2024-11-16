@@ -42,25 +42,25 @@ const Index = () => {
 
   return (
     <Layout>
-      <section className='flex items-start lg:pl-60'>
+      <section className='flex flex-col-reverse lg:flex-row items-start pt-[4.2rem] lg:pt-0 lg:pl-60'>
+        <ComponentLeft images={images} />
+
         <Header
           title1='Península Valdés, Chubut, Argentina'
           title2=''
         />
 
-        <ComponentLeft images={images} />
-
         <ComponentRight
           data={data}
           title={lan === 'ESP' ? 'Ediciones' : 'Editions'}
         >
-          <div className='flex flex-col gap-y-3 leading-5 max-w-xl'>
-            <h1 className='font-condensed text-3xl indent-9'>Cetácea</h1>
+          <div className='flex flex-col gap-y-3 leading-5 max-w-xl text-sm lg:text-base'>
+            <h1 className='font-condensed text-2xl lg:text-3xl indent-9'>Cetácea</h1>
             <h2 className='pl-9'>
               Fecha de lanzamiento: Marzo 2025 <br />
               Fecha de residencia: Junio 2025
             </h2>
-            <div className='[&>p]:indent-9'>
+            <div className='[&>p]:indent-9 pb-6'>
               <p>
                 Cetácea es una residencia artística, que propone practicar y promover experiencias transformadoras
                 dentro de y a través de diferentes campos y enfoques. En colaboraciones inesperadas con el territorio en

@@ -19,13 +19,13 @@ const AcercaDeItem = ({ data }: Props) => {
   }
   return (
     <article className='text-base'>
-      <div className='flex gap-x-3'>
-        <div className={`w-6 transition-all ${isOpen ? 'text-2xl pt-2' : 'pt-3'}`}>
+      <div className='flex gap-x-3 items-start '>
+        <div className={`w-6 transition-all ${isOpen ? 'text-2xl mt-2' : 'mt-3'}`}>
           <Right />
         </div>
         <div className='flex-1 flex flex-col'>
           <button
-            className='flex flex-col text-left lg:flex-row gap-x-1 items-start lg:items-end hover:pl-4 underline-offset-2 transition-all'
+            className='flex flex-col text-left lg:flex-row gap-x-1 items-start lg:items-end lg:hover:pl-4 underline-offset-2 transition-all'
             onClick={handleButtonClick}
           >
             <h1 className='font-condensed text-xl lg:text-3xl'>{data.title}</h1>
@@ -50,7 +50,7 @@ const AcercaDeItem = ({ data }: Props) => {
                 </div>
               )}
 
-              <div className='mb-6 leading-5 whitespace-break-spaces'>{data.description}</div>
+              <div className='leading-5 whitespace-break-spaces'>{data.description}</div>
             </div>
           )}
         </div>

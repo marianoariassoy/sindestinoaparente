@@ -37,25 +37,24 @@ const Index = () => {
 
   return (
     <Layout>
-      <section className='flex items-start lg:pl-60'>
+      <section className='flex flex-col-reverse lg:flex-row items-start pt-[4.2rem] lg:pt-0 lg:pl-60'>
+        <ComponentLeft images={images} />
+
         <Header
           title1='Seguir con el problema, Donna J. Haraway'
           title2=''
         />
-
-        <ComponentLeft images={images} />
-
         <ComponentRight
           data={data}
           title={lan === 'ESP' ? 'Ediciones' : 'Editions'}
         >
-          <div className='flex flex-col gap-y-3 leading-5 max-w-xl'>
-            <h1 className='font-condensed text-3xl indent-9'>Seminarios</h1>
+          <div className='flex flex-col gap-y-3 leading-5 max-w-xl text-sm lg:text-base'>
+            <h1 className='font-condensed text-2xl lg:text-3xl indent-9'>Seminarios</h1>
             <h2 className='pl-9'>
               Pronto compartiremos + información. <br />
               Mantente atentx a nuestras redes sociales!
             </h2>
-            <div className='[&>p]:indent-9'>
+            <div className='[&>p]:indent-9 pb-6'>
               <p>
                 Regresan los grupos de lectura colectiva con los que nació Sin Destino Aparente, en el año 2019.
                 Lecturas y reflexiones que hemos compartido y no pierden su carácter contemporáneo, ya que se vuelven

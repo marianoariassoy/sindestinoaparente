@@ -20,7 +20,7 @@ const Aside = ({
 }) => {
   return (
     <div
-      className={`p-3 lg:p-1 flex flex-col gap-y-12 text-2xl lg:text-4xl font-condensed ${borderColor} fixed aside z-50 h-screen w-full max-w-[40rem] top-0 right-0 translate transition-all overflow-y-scroll`}
+      className={`p-3 lg:p-1 flex flex-col gap-y-12 text-2xl lg:text-4xl font-condensed ${borderColor} fixed aside z-50 h-screen w-full max-w-[40rem] top-0 translate transition-all overflow-y-auto right-0`}
       id={id}
       style={{ backgroundColor: bgColor }}
     >

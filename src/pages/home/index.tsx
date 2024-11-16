@@ -56,11 +56,19 @@ Fecha de residencia: Junio 2025`,
 
   return (
     <Layout>
-      <Header
-        title1='SIN DESTINO APARENTE'
-        title2={time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}
-      />
-      <section className='px-3 py-32 lg:py-0 lg:pl-72 lg:pr-12 grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-8 lg:h-screen'>
+      <div className='hidden lg:block'>
+        <Header
+          title1='SIN DESTINO APARENTE'
+          title2={time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}
+        />
+      </div>
+      <div className='mt-[3.75rem] pb-6 lg:hidden'>
+        <Header
+          title1={time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}
+          title2=''
+        />
+      </div>
+      <section className='px-3 pb-32 lg:py-0 lg:pl-72 lg:pr-12 grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-8 lg:h-screen'>
         {data.map((item, index) => (
           <Item
             key={index}
