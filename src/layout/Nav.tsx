@@ -7,12 +7,22 @@ import Lan from './Lan'
 const Nav = () => {
   const [location] = useLocation()
   const { lan } = useDataContext()
+  const metaTags = document.querySelectorAll('meta')
 
   const openAside = (tag: string) => () => {
     document.querySelector('#acercade')?.classList.add('translate')
     document.querySelector('#apoyo')?.classList.add('translate')
     document.querySelector('#contacto')?.classList.add('translate')
+
     document.querySelector(tag)?.classList.remove('translate')
+
+    metaTags.forEach(meta => {
+      if (meta.getAttribute('name') === 'theme-color') {
+        if (tag === '#acercade') meta.setAttribute('content', '#e8b4c8')
+        else if (tag === '#apoyo') meta.setAttribute('content', '#ed6e58')
+        else meta.setAttribute('content', '#4ca3cf')
+      }
+    })
   }
 
   return (
