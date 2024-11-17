@@ -26,20 +26,22 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events, onAddE
   }
 
   return (
-    <div className='grid grid-cols-7 h-full pb-3'>
+    <div
+      className='grid grid-cols-4 lg:grid-cols-7 h-full pb-3 
+    
+    [&>div:nth-child(4n)]:border-r-0 lg:[&>div:nth-child(4n)]:border-r lg:[&>div:nth-child(7n)]:border-r-0 [&>div:nth-child(n+29)]:border-b-0  '
+    >
       {days.map(day => {
-        const isCurrentDay = isToday(day) // Verificar si es el día actual
+        const isCurrentDay = isToday(day)
         return (
           <div
             key={day.toISOString()}
-            className={`border border-black p-2 cursor-pointer hover:bg-gray-100 ${
-              isCurrentDay
-                ? 'bg-primary' // Estilo para el día actual
-                : ''
+            className={`border-b border-r border-black p-2 cursor-pointer hover:bg-gray-100 ${
+              isCurrentDay ? 'bg-gray-100' : ''
             }`}
             onClick={() => handleDayClick(day)}
           >
-            <span>{format(day, 'd')}</span>
+            <span className='text-3xl lg:text-5xl font-condensed'>{format(day, 'd')}</span>
             <div className='mt-2 space-y-1'>
               {events
                 .filter(event => isSameDay(new Date(event.date), day))

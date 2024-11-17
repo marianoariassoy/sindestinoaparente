@@ -38,7 +38,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <section className='flex flex-col-reverse lg:flex-row items-start pt-[4.2rem] lg:pt-0 lg:pl-60'>
+      <section className='flex flex-col-reverse lg:flex-row items-start pt-20 lg:pt-0 lg:pl-60'>
         <ComponentLeft images={images} />
 
         <Header
@@ -48,24 +48,21 @@ const Index = () => {
 
         <ComponentRight
           data={data}
-          title={lan === 'ESP' ? 'Ediciones' : 'Editions'}
+          topTitle={lan === 'ESP' ? 'Ediciones' : 'Editions'}
+          title='Suave Desliz'
+          description=''
         >
-          <div className='flex flex-col gap-y-3 leading-5 max-w-xl text-sm lg:text-base'>
-            <h1 className='font-condensed text-2xl lg:text-3xl indent-9'>Suave Desliz</h1>
-            <div className='[&>p]:indent-9 pb-6'>
-              <p>Comida y arte en el cruce.</p>
-              <p>
-                Ciclo de cenas donde mes a mes un artista y un chef son invitadxs a colaborar mutuamente, cruzar sus
-                prácticas y crear una experiencia que no es ni exclusivamente gastronómica ni artística, sino que se
-                nutre y contagia una de la otra para inventar una propuesta única cada vez.
-              </p>
-              <p>
-                Estos encuentros promueven la comida y arte en cruce, siendo las dos disciplinas de la vida que tienen
-                el permiso de mezclarlo todo y elaborar nuevos significados. La mezcla como motor y disparador de
-                invención de ambas disciplinas.
-              </p>
-            </div>
-          </div>
+          <p>Comida y arte en el cruce.</p>
+          <p>
+            Ciclo de cenas donde mes a mes un artista y un chef son invitadxs a colaborar mutuamente, cruzar sus
+            prácticas y crear una experiencia que no es ni exclusivamente gastronómica ni artística, sino que se nutre y
+            contagia una de la otra para inventar una propuesta única cada vez.
+          </p>
+          <p>
+            Estos encuentros promueven la comida y arte en cruce, siendo las dos disciplinas de la vida que tienen el
+            permiso de mezclarlo todo y elaborar nuevos significados. La mezcla como motor y disparador de invención de
+            ambas disciplinas.
+          </p>
         </ComponentRight>
       </section>
     </Layout>
