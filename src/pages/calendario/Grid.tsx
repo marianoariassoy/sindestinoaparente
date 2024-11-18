@@ -7,23 +7,11 @@ interface CalendarGridProps {
   onAddEvent: (event: Event) => void
 }
 
-const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events, onAddEvent }) => {
+const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
   const days = eachDayOfInterval({
     start: startOfMonth(currentDate),
     end: endOfMonth(currentDate)
   })
-
-  const handleDayClick = (date: Date) => {
-    const title = prompt('Título del evento:')
-    if (title) {
-      const newEvent: Event = {
-        id: `${date.toISOString()}-${title}`,
-        title,
-        date: date.toISOString()
-      }
-      onAddEvent(newEvent)
-    }
-  }
 
   return (
     <div
@@ -33,27 +21,31 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events, onAddE
     >
       {days.map(day => {
         const isCurrentDay = isToday(day)
+        const hasMatchingDate = events.some(event => isSameDay(new Date(event.date), day))
+
         return (
           <div
             key={day.toISOString()}
-            className={`border-b border-r border-black p-2 cursor-pointer hover:bg-gray-100 ${
-              isCurrentDay ? 'bg-gray-100' : ''
-            }`}
-            onClick={() => handleDayClick(day)}
+            className={`border-b border-r border-black p-2 
+              ${isCurrentDay ? 'bg-gray-100' : ''} 
+              ${hasMatchingDate ? 'hover:bg-gray-100 cursor-pointer' : ''}`}
           >
-            <span className='text-3xl lg:text-5xl font-condensed'>{format(day, 'd')}</span>
-            <div className='mt-2 space-y-1'>
-              {events
-                .filter(event => isSameDay(new Date(event.date), day))
-                .map(event => (
-                  <div
-                    key={event.id}
-                    className='text-xs bg-blue-500 text-white rounded px-2 py-1'
-                  >
-                    {event.title}
-                  </div>
-                ))}
-            </div>
+            {hasMatchingDate ? (
+              <span className='text-3xl lg:text-5xl font-condensed text-tertiary '>{format(day, 'd')}</span>
+            ) : (
+              <span className='text-3xl lg:text-5xl font-condensed'>{format(day, 'd')}</span>
+            )}
+
+            {events
+              .filter(event => isSameDay(new Date(event.date), day))
+              .map(event => (
+                <div
+                  key={event.id}
+                  className='text-sm bg-primary px-2 py-1 absolute'
+                >
+                  {event.title}
+                </div>
+              ))}
           </div>
         )
       })}

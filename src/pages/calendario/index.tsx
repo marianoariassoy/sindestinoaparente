@@ -2,16 +2,22 @@ import Layout from '../../layout/Layout'
 import React, { useState } from 'react'
 import Header from './Header'
 import Grid from './Grid'
-import { Event } from '../../types/Event'
+// import { Event } from '../../types/Event'
 import { addMonths, subMonths } from 'date-fns'
 
 const Calendar: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date())
-  const [events, setEvents] = useState<Event[]>([])
+  const events = [
+    {
+      id: 1,
+      title: 'test',
+      description: 'description',
+      date: '2024-11-20'
+    }
+  ]
 
   const handleNextMonth = () => setCurrentDate(addMonths(currentDate, 1))
   const handlePrevMonth = () => setCurrentDate(subMonths(currentDate, 1))
-  const handleAddEvent = (newEvent: Event) => setEvents([...events, newEvent])
 
   return (
     <Layout>
@@ -24,7 +30,6 @@ const Calendar: React.FC = () => {
         <Grid
           currentDate={currentDate}
           events={events}
-          onAddEvent={handleAddEvent}
         />
       </section>
     </Layout>
