@@ -12,7 +12,29 @@ const Calendar: React.FC = () => {
       id: 1,
       title: 'test',
       description: 'description',
-      date: '2024-11-20'
+      date: '2024-11-20',
+      type: 1
+    },
+    {
+      id: 2,
+      title: 'test 2',
+      description: 'description 2',
+      date: '2024-11-22',
+      type: 1
+    },
+    {
+      id: 3,
+      title: 'test 2',
+      description: 'description 2',
+      date: '2024-11-11',
+      type: 2
+    },
+    {
+      id: 4,
+      title: 'test 2',
+      description: 'description 2',
+      date: '2024-11-12',
+      type: 2
     }
   ]
 
