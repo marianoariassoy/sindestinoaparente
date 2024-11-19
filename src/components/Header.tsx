@@ -1,4 +1,4 @@
-const Header = ({ title1 = '', title2 = '' }: { title1: string; title2: string }) => {
+const Header = ({ title1 = '', title2 = '' }: { title1: string; title2?: string }) => {
   return (
     <header
       className='lg:fixed top-20 lg:top-2 left-0 w-full flex 

@@ -43,7 +43,10 @@ const Index = () => {
   return (
     <Layout>
       <section className='flex flex-col-reverse lg:flex-row items-start pt-20 lg:pt-0 lg:pl-60'>
-        <ComponentLeft images={images} />
+        <ComponentLeft
+          images={images}
+          labels={[]}
+        />
 
         <Header
           title1='Península Valdés, Chubut, Argentina'

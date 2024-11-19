@@ -14,6 +14,13 @@
 .border-quaternary {
   box-shadow: 0 0 8px 12px #4ca3cf;
 }
+.border-acent {
+  box-shadow: 0 0 8px 12px #47f86e;
+}
+
 .translate {
   transform: translateX(110%);
+}
+.text-shadow-secondary {
+  text-shadow: 0 0 12px #ed6e58;
 }

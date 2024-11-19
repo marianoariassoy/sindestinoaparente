@@ -11,7 +11,7 @@ const ComponentRight = ({ data, children, topTitle, title, description }) => {
   }, [])
 
   return (
-    <div className='lg:fixed right-0 top-0 w-full lg:w-[35%] lg:pb-12 lg:h-screen overflow-y-auto bg-white z-40'>
+    <div className='lg:fixed right-0 top-0 w-full lg:w-[33%] lg:pb-12 lg:h-screen overflow-y-auto bg-white z-40'>
       <div className='border-t border-black lg:mt-2 py-1 flex justify-between items-start px-3'>
         <h3>{topTitle}</h3>
         <button

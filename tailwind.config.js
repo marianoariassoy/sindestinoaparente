@@ -11,7 +11,8 @@ export default {
         primary: '#eaf88d',
         secondary: '#ed6e58',
         tertiary: '#e8b4c8',
-        quaternary: '#4ca3cf'
+        quaternary: '#4ca3cf',
+        acent: '#47F86E'
       }
     }
   },

@@ -11,21 +11,28 @@ const Index = () => {
 
   const data = [
     {
-      title: 'Seminarios',
-      description: 'Pronto compartiremos +  información. Mantente atentx a nuestras redes sociales',
+      title_es: 'Seminarios',
+      title_en: 'Seminars',
+      description_es: 'Pronto compartiremos +  información. Mantente atentx a nuestras redes sociales',
+      description_en: 'Pronto compartiremos +  información. Mantente atentx a nuestras redes sociales',
       image: '/images/1.jpg',
       url: '/seminarios'
     },
     {
-      title: 'Residencias',
-      description: `Fecha de lanzamiento: Marzo 2025
+      title_es: 'Residencias',
+      title_en: 'Residencies',
+      description_es: `Fecha de lanzamiento: Marzo 2025
+Fecha de residencia: Junio 2025`,
+      description_en: `Fecha de lanzamiento: Marzo 2025
 Fecha de residencia: Junio 2025`,
       image: '/images/2.jpg',
       url: '/residencias'
     },
     {
-      title: 'Club de cenas',
-      description: 'Pronto compartiremos +  información. Mantente atentx a nuestras redes sociales!',
+      title_es: 'Club de cenas',
+      title_en: 'Club of dances',
+      description_es: 'Pronto compartiremos +  información. Mantente atentx a nuestras redes sociales!',
+      description_en: ' Pronto compartiremos +  información. Mantente atentx a nuestras redes sociales!',
       image: '/images/3.jpg',
       url: '/cenas'
     }
@@ -72,7 +79,10 @@ Fecha de residencia: Junio 2025`,
         {data.map((item, index) => (
           <Item
             key={index}
-            item={item}
+            title={lan === 'ESP' ? item.title_es : item.title_en}
+            description={lan === 'ESP' ? item.description_es : item.description_en}
+            image={item.image}
+            url={item.url}
           />
         ))}
       </section>

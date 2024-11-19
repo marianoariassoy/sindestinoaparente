@@ -36,10 +36,28 @@ const Index = () => {
     }
   ]
 
+  const labels = [
+    {
+      text: 'Propone una estructura novedosa pero que no deja atrás aquella con la que nació.A partir de cuatro seminarios anuales, crearemos derivas de lecturas y conversaciones con voces heterogéneas'
+    },
+    {
+      text: 'Estructura novedosa pero que no deja atrás aquella con la que nació.A partir de cuatro seminarios anuales '
+    },
+    {
+      text: 'Mutante y tentacular, propone una estructura novedosa pero que no deja atrás aquella  crearemos derivas de lecturas y conversaciones con voces heterogéneas'
+    },
+    {
+      text: 'SDA, mutante y tentacular, propone una estructura novedosa pero que no deja atrás aquella con la que nació.A partir de cuatro seminarios anuales, crearemos derivas de lecturas y conversaciones con voces heterogéneas'
+    }
+  ]
+
   return (
     <Layout>
       <section className='flex flex-col-reverse lg:flex-row items-start pt-20 lg:pt-0 lg:pl-60'>
-        <ComponentLeft images={images} />
+        <ComponentLeft
+          images={images}
+          labels={labels}
+        />
 
         <Header
           title1='Comité, 2024'
