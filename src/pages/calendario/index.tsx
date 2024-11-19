@@ -7,6 +7,7 @@ import { addMonths, subMonths } from 'date-fns'
 
 const Calendar: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date())
+
   const events: Event[] = [
     {
       id: 1,

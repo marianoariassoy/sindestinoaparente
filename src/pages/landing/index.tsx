@@ -1,32 +1,10 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'wouter'
 import ImageComponent from '../../components/Image'
 import { useDataContext } from '../../context/useDataContext'
+import Time from '../../components/Time'
 
 const Index = () => {
-  const [time, setTime] = useState(new Date())
   const { bgimage } = useDataContext()
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date())
-    }, 1000)
-
-    return () => clearInterval(timer)
-  }, [])
-
-  const getDateToday = () => {
-    const date = new Date()
-    const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
-    const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sept', 'Oct', 'Nov', 'Dic']
-
-    const dayName = days[date.getDay()]
-    const day = date.getDate()
-    const month = months[date.getMonth()]
-    const year = date.getFullYear()
-
-    return `${dayName} ${day} ${month} ${year}`
-  }
 
   return (
     <section className='h-screen w-full'>
@@ -37,10 +15,10 @@ const Index = () => {
       >
         <div>SIN DESTINO APARENTE</div>
         <div className='flex flex-col lg:flex-row items-end gap-x-2'>
-          <span>{time.toLocaleTimeString()} UTC-3</span>
-          <span>{getDateToday()}</span>
+          <Time />
         </div>
       </header>
+
       <div className='opacity-0 fade-in-delay absolute z-50 left-0 top-0 w-full h-full flex justify-center items-center  mix-blend-exclusion p-2'>
         <Link
           to='/home'
