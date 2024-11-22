@@ -3,7 +3,7 @@ import ItemModal from './ImageModal'
 import Modal from './Modal'
 import Labels from './Labels'
 
-const ComponentLeft = ({ images, labels }: { images: string[]; labels }) => {
+const ComponentLeft = ({ images, labels }) => {
   const [currentImage, setCurrentImage] = useState(null)
 
   function generateRandomPadding(count: number) {
@@ -21,10 +21,10 @@ const ComponentLeft = ({ images, labels }: { images: string[]; labels }) => {
     <>
       <div className='lg:w-[60%] relative'>
         <div className='flex flex-col'>
-          {images.map((image, index) => (
+          {images.map(item => (
             <ItemModal
-              key={index}
-              src={image}
+              key={item.id}
+              src={item.image}
               alt='Imagen'
               setCurrentImage={setCurrentImage}
             />

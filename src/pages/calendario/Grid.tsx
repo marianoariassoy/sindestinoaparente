@@ -39,7 +39,7 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
                     key={event.id}
                     className='h-full w-full'
                   >
-                    {event.type === 1 ? (
+                    {event.category === 1 ? (
                       <>
                         <button
                           className='text-3xl lg:text-6xl font-condensed text-secondary text-shadow-secondary w-full h-full items-start flex p-2 hover:bg-gray-100'
@@ -52,7 +52,7 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
                             format(day, 'd') === selectedEvent ? 'block' : 'hidden'
                           }`}
                         >
-                          <span>{event.title}</span>
+                          <span className='font-bold'>{event.title}</span>
                           <span>{event.description}</span>
                           {event.url && (
                             <span>
@@ -62,7 +62,7 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
                                 rel='noopener noreferrer'
                                 className='underline'
                               >
-                                INSCRIPCION
+                                LINK
                               </a>
                             </span>
                           )}

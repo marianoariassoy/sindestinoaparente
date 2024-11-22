@@ -12,7 +12,7 @@ const LabelsItems = ({ text, padding }) => {
         onClick={() => setIsOpen(false)}
         className='cursor-pointer'
       >
-        <div className='bg-acent border-acent font-condensed text-sm lg:text-base px-2'> {text}</div>
+        <div className='bg-acent border-acent font-condensed text-sm lg:text-base px-2'>{text}</div>
       </div>
     )
   )

@@ -6,7 +6,7 @@ const Labels = ({ labels, padding }) => {
       {labels.map((item, index) => (
         <LabelsItems
           key={index}
-          text={item.text}
+          text={item.description}
           padding={padding[index]}
         />
       ))}

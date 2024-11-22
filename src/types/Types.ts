@@ -1,6 +1,6 @@
 export interface Event {
   id: number
-  type: number
+  category: number
   title: string
   description?: string
   date: string // Formato ISO (e.g., "2024-11-16")

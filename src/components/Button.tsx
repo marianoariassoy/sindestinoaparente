@@ -29,7 +29,7 @@ const AcercaDeItem = ({ data }: Props) => {
             onClick={handleButtonClick}
           >
             <h1 className='font-condensed text-xl lg:text-3xl'>{data.title}</h1>
-            {data.subtitle && !isOpen && (
+            {data.subtitle && data.image && !isOpen && (
               <>
                 <span className='hidden lg:block'>/</span>
                 <span className='flex-1 font-sans text-sm lg:text-base'>{data.subtitle}</span>
@@ -50,7 +50,7 @@ const AcercaDeItem = ({ data }: Props) => {
                 </div>
               )}
 
-              <div className='leading-5 whitespace-break-spaces'>{data.description}</div>
+              <div className='leading-5 whitespace-break-spaces font-sans'>{data.description}</div>
             </div>
           )}
         </div>

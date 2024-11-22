@@ -1,25 +1,16 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useEffect } from 'react'
+import useFetch from '../hooks/useFetch'
 
-const images = ['/images/landing/1.jpg', '/images/landing/2.jpg', '/images/landing/3.jpg', '/images/landing/4.jpg']
-const random = Math.floor(Math.random() * images.length)
-
-export type ContextType = {
-  lan: string
-  bgimage: string
-  setBgimage: (bgimage: string) => void
-  setLan: (lan: string) => void
-}
-
-export const Context = createContext<ContextType>({
-  lan: 'ESP',
-  bgimage: images[random],
-  setBgimage: () => {},
-  setLan: () => {}
-})
+export const Context = createContext(null)
 
 export const ContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [lan, setLan] = useState('ESP')
-  const [bgimage, setBgimage] = useState(images[random])
+  const { data, loading } = useFetch(`/home`)
+  const [lan, setLan] = useState<string>('ESP')
+  const [bgImage, setBgImage] = useState({})
 
-  return <Context.Provider value={{ lan, setLan, bgimage, setBgimage }}>{children}</Context.Provider>
+  useEffect(() => {
+    if (!loading) setBgImage(data.image)
+  }, [data, loading])
+
+  return <Context.Provider value={{ lan, setLan, bgImage, setBgImage }}>{children}</Context.Provider>
 }

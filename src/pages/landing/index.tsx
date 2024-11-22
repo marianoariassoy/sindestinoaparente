@@ -4,7 +4,7 @@ import { useDataContext } from '../../context/useDataContext'
 import Time from '../../components/Time'
 
 const Index = () => {
-  const { bgimage } = useDataContext()
+  const { bgImage } = useDataContext()
 
   return (
     <section className='h-screen w-full'>
@@ -31,8 +31,9 @@ const Index = () => {
           />
         </Link>
       </div>
+
       <ImageComponent
-        src={bgimage}
+        src={bgImage}
         alt='Imagen principal'
       />
     </section>
