@@ -8,9 +8,9 @@ const ComponentLeft = ({ images, labels, edition }) => {
 
   function generateRandomPadding(count: number) {
     return Array.from({ length: count }, () => ({
-      left: Math.round(Math.random() * 80),
-      right: Math.round(Math.random() * 80),
-      top: Math.round(Math.random() * 80),
+      left: Math.round(Math.random() * 120),
+      right: Math.round(Math.random() * 120),
+      top: Math.round(Math.random() * 120),
       bottom: Math.round(Math.random() * 50)
     }))
   }
