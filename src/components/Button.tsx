@@ -10,7 +10,7 @@ interface Props {
     description: string
     image: string
   }
-  setEdition: (edition: number) => void
+  setEdition?: (edition: number) => void
 }
 
 const AcercaDeItem = ({ data, setEdition }: Props) => {
@@ -19,8 +19,10 @@ const AcercaDeItem = ({ data, setEdition }: Props) => {
   const handleButtonClick = () => {
     setIsOpen(!isOpen)
     if (!isOpen) {
-      setEdition(data.id)
-      window.scrollTo(0, 0)
+      if (setEdition) {
+        setEdition(data.id)
+        window.scrollTo(0, 0)
+      }
     }
   }
   return (
