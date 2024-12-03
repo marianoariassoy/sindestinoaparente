@@ -16,10 +16,23 @@ const Index = ({ category = 1 }: { category: number }) => {
   const [currentTexts, setCurrentTexts] = useState([])
   const [currentImages, setCurrentImages] = useState([])
   const [currentLabels, setCurrentLabels] = useState([])
+  const [edition, setEdition] = useState(null)
+  const [sectionTitle, setSectionTitle] = useState('')
 
   useEffect(() => {
     if (editions) setCurrentEditions(editions.filter(item => item.category === category))
-  }, [editions, category])
+
+    if (category === 1) {
+      if (lan === 'ESP') setSectionTitle('Seminarios')
+      else setSectionTitle('Seminars')
+    } else if (category === 2) {
+      if (lan === 'ESP') setSectionTitle('Residencias')
+      else setSectionTitle('Residencies')
+    } else if (category === 3) {
+      if (lan === 'ESP') setSectionTitle('Cenas')
+      else setSectionTitle('Dinners')
+    }
+  }, [editions, category, lan])
 
   useEffect(() => {
     if (texts) setCurrentTexts(texts.filter(item => item.category === category))
@@ -41,6 +54,7 @@ const Index = ({ category = 1 }: { category: number }) => {
         <ComponentImages
           images={currentImages}
           labels={currentLabels}
+          edition={edition}
         />
       )}
 
@@ -48,11 +62,13 @@ const Index = ({ category = 1 }: { category: number }) => {
         <Loader />
       ) : (
         <>
-          {currentTexts.length > 0 && <Header title1={currentTexts[0].title_images} />}
+          {currentTexts.length > 0 && currentTexts[0].title_images && <Header title1={currentTexts[0].title_images} />}
           <ComponentInfo
             editions={currentEditions}
             texts={currentTexts}
             title={lan === 'ESP' ? 'Ediciones' : 'Editions'}
+            setEdition={setEdition}
+            sectionTitle={sectionTitle}
           />
         </>
       )}

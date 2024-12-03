@@ -42,13 +42,13 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
                     {event.category === 1 ? (
                       <>
                         <button
-                          className='text-3xl lg:text-6xl font-condensed text-secondary text-shadow-secondary w-full h-full items-start flex p-2 hover:bg-gray-100'
+                          className='text-3xl lg:text-6xl font-condensed text-secondary text-shadow-secondary w-full h-full items-start flex p-2 hover:bg-gray-100 '
                           onClick={() => setSelectedEvent(format(day, 'd'))}
                         >
                           {format(day, 'd')}
                         </button>
                         <div
-                          className={`absolute z-30 top-6 left-6 flex flex-col gap-y-3 text-sm bg-primary border-primary  ${
+                          className={`absolute z-30 leading-4 top-6 left-6 flex flex-col gap-y-3 text-sm bg-primary border-primary  ${
                             format(day, 'd') === selectedEvent ? 'block' : 'hidden'
                           }`}
                         >
@@ -69,9 +69,9 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
                         </div>
                       </>
                     ) : (
-                      <div className='text-secondary text-sm p-2 flex flex-col h-full gap-y-6'>
+                      <div className='text-secondary text-sm p-2 flex flex-col h-full lg:gap-y-6'>
                         <span className='font-condensed text-2xl lg:text-4xl'>{format(day, 'd')}</span>
-                        <span>{event.title}</span>
+                        <span className='leading-4'>{event.title}</span>
                       </div>
                     )}
                   </div>

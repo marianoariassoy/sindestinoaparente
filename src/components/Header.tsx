@@ -1,7 +1,7 @@
 const Header = ({ title1 = '', title2 = '' }: { title1: string; title2?: string }) => {
   return (
     <header
-      className='lg:fixed top-20 lg:top-2 left-0 w-full flex 
+      className='hidden lg:flex fixed top-20 lg:top-2 left-0 w-full 
       items-start p-1 border-t border-black bg-white gap-3 z-20 text-sm lg:text-base'
     >
       <div className='hidden lg:block lg:w-60'></div>

@@ -4,18 +4,24 @@ import ImageComponent from './Image'
 
 interface Props {
   data: {
+    id: number
     title: string
     subtitle: string
     description: string
     image: string
   }
+  setEdition: (edition: number) => void
 }
 
-const AcercaDeItem = ({ data }: Props) => {
+const AcercaDeItem = ({ data, setEdition }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleButtonClick = () => {
     setIsOpen(!isOpen)
+    if (!isOpen) {
+      setEdition(data.id)
+      window.scrollTo(0, 0)
+    }
   }
   return (
     <article className='text-base'>

@@ -27,7 +27,7 @@ const ImageComponent = ({ src, alt, setCurrentImage }: Props) => {
   ) : (
     <article className={`relative ${isPortrait ? 'w-full' : 'w-[60%]'}`}>
       <button
-        className='absolute top-0 left-0 w-full h-full bg-primary opacity-0 mix-blend-exclusion hover:opacity-50 '
+        className='absolute top-0 left-0 w-full h-full'
         onClick={() => setCurrentImage(src)}
       ></button>
       <img

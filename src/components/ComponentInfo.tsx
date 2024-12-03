@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Button from './Button'
 import { Down, Up } from './icons'
 
-const ComponentRight = ({ editions, texts, title }) => {
+const ComponentRight = ({ editions, texts, title, setEdition, sectionTitle }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenText, setIsOpenText] = useState(true)
 
@@ -33,13 +33,14 @@ const ComponentRight = ({ editions, texts, title }) => {
             <Button
               key={item.id}
               data={item}
+              setEdition={setEdition}
             />
           ))}
         </div>
       )}
 
       <div className='border-t border-black py-1 flex justify-between items-start px-3 lg:hidden'>
-        <h3>Info</h3>
+        <h3>{sectionTitle}</h3>
         <button
           onClick={() => setIsOpenText(!isOpenText)}
           className='hover:opacity-60 text-xs lg:text-base'
@@ -57,7 +58,7 @@ const ComponentRight = ({ editions, texts, title }) => {
             >
               <div className='flex flex-col gap-y-3 leading-5 max-w-xl text-sm lg:text-base'>
                 <h1 className='font-condensed text-2xl lg:text-3xl indent-9'>{item.title}</h1>
-                {item.subtitle && <h2 className='pl-9 '>{item.subtitle}</h2>}
+                {item.subtitle && <h2 className='pl-9 leading-5 whitespace-break-spaces'>{item.subtitle}</h2>}
                 <div className='indent-9 pb-6 whitespace-break-spaces leading-5'>{item.description}</div>
               </div>
             </div>

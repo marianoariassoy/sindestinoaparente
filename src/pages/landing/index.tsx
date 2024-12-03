@@ -19,23 +19,12 @@ const Index = () => {
         </div>
       </header>
 
-      <div className='opacity-0 fade-in-delay absolute z-50 left-0 top-0 w-full h-full flex justify-center items-center  mix-blend-exclusion p-2'>
-        <Link
-          to='/home'
-          className='w-full lg:w-2/3 h-auto'
-        >
-          <img
-            src='/assets/sda.svg'
-            alt='Logo'
-            className='w-full h-auto'
-          />
-        </Link>
-      </div>
-
-      <ImageComponent
-        src={bgImage}
-        alt='Imagen principal'
-      />
+      <Link to='/home'>
+        <ImageComponent
+          src={bgImage}
+          alt='Imagen principal'
+        />
+      </Link>
     </section>
   )
 }

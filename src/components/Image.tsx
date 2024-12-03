@@ -25,7 +25,7 @@ const ImageComponent = ({ src, alt }: Props) => {
     <img
       src={src}
       alt={alt}
-      className='h-full w-full object-cover object-center'
+      className='h-full w-full object-cover object-center transition-all'
     />
   )
 }

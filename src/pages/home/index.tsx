@@ -2,7 +2,7 @@ import Layout from '../../layout/Layout'
 import { useDataContext } from '../../context/useDataContext'
 import ImageComponent from '../../components/Image'
 import Item from './Item'
-import HeaderHome from './Header'
+import Header from './Header'
 import useFetch from '../../hooks/useFetch'
 
 const Index = () => {
@@ -11,7 +11,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <HeaderHome />
+      <Header />
 
       <section className='px-3 pb-32 lg:py-0 lg:pl-72 lg:pr-12 grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-8 lg:h-screen'>
         {!loading &&
