@@ -1,11 +1,6 @@
-const LabelsItems = ({ text, padding }) => {
+const LabelsItems = ({ text }) => {
   return (
-    <div
-      style={{
-        padding: `${padding.top}px ${padding.right}px ${padding.bottom}px ${padding.left}px`
-      }}
-      className='cursor-pointer'
-    >
+    <div className='my-8 px-10'>
       <div className='bg-acent border-acent font-condensed text-sm lg:text-base px-2'>{text}</div>
     </div>
   )

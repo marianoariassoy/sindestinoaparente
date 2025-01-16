@@ -4,10 +4,11 @@ import BeatLoader from 'react-spinners/BeatLoader'
 interface Props {
   src: string
   alt: string
+  title: string
   setCurrentImage: (image: string) => void
 }
 
-const ImageComponent = ({ src, alt, setCurrentImage }: Props) => {
+const ImageComponent = ({ src, alt, title, setCurrentImage }: Props) => {
   const [isLoading, setIsLoading] = useState(true)
   const [isPortrait, setIsPortrait] = useState(true)
 
@@ -35,6 +36,7 @@ const ImageComponent = ({ src, alt, setCurrentImage }: Props) => {
         alt={alt}
         className='w-full'
       />
+      {title && <div className='py-2 text-sm'>{title}</div>}
     </article>
   )
 }

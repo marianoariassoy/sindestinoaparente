@@ -1,21 +1,10 @@
 import { useState } from 'react'
 import ItemModal from './ImageModal'
 import Modal from './Modal'
-import Labels from './Labels'
+import LabelsItems from './LabelsItems'
 
-const ComponentLeft = ({ images, labels, edition }) => {
+const ComponentLeft = ({ images, edition }) => {
   const [currentImage, setCurrentImage] = useState(null)
-
-  function generateRandomPadding(count: number) {
-    return Array.from({ length: count }, () => ({
-      left: Math.round(Math.random() * 120),
-      right: Math.round(Math.random() * 120),
-      top: Math.round(Math.random() * 120),
-      bottom: Math.round(Math.random() * 50)
-    }))
-  }
-
-  const padding = generateRandomPadding(labels.length)
 
   return (
     <>
@@ -24,29 +13,40 @@ const ComponentLeft = ({ images, labels, edition }) => {
           {edition &&
             images
               .filter(item => item.edition === edition)
-              .map(item => (
+              .map(item =>
+                item.image ? (
+                  <ItemModal
+                    key={item.id}
+                    src={item.image}
+                    title={item.text}
+                    alt='Imagen'
+                    setCurrentImage={setCurrentImage}
+                  />
+                ) : (
+                  <LabelsItems
+                    key={item.id}
+                    text={item.text}
+                  />
+                )
+              )}
+          {!edition &&
+            images.map(item =>
+              item.image ? (
                 <ItemModal
                   key={item.id}
                   src={item.image}
+                  title={item.text}
                   alt='Imagen'
                   setCurrentImage={setCurrentImage}
                 />
-              ))}
-          {!edition &&
-            images.map(item => (
-              <ItemModal
-                key={item.id}
-                src={item.image}
-                alt='Imagen'
-                setCurrentImage={setCurrentImage}
-              />
-            ))}
+              ) : (
+                <LabelsItems
+                  key={item.id}
+                  text={item.text}
+                />
+              )
+            )}
         </div>
-
-        <Labels
-          labels={labels}
-          padding={padding}
-        />
       </div>
 
       {currentImage && (

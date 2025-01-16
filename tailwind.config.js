@@ -7,6 +7,9 @@ export default {
         sans: ['nimbus-sans', 'sans-serif'],
         condensed: ['nimbus-sans-condensed', 'sans-serif']
       },
+      sizes: {
+        'text-sm': '.85rem'
+      },
       colors: {
         primary: '#eaf88d',
         secondary: '#ed6e58',

@@ -27,7 +27,7 @@ const Nav = () => {
 
   return (
     <div
-      className='absolute w-full left-0 top-[3.7rem] px-3 hidden lg:flex flex-col bg-white'
+      className='absolute w-full left-0 top-[3.7rem] px-3 hidden lg:flex flex-col bg-white lg:bg-transparent'
       id='menu'
     >
       <nav className='mt-4 lg:my-12'>

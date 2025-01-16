@@ -25,26 +25,13 @@ const HeaderHome = () => {
   }
 
   return (
-    <>
-      <div className='hidden lg:block'>
-        <header
-          className='fixed top-2 left-0 w-full flex 
-      items-start p-1 border-t border-black bg-white gap-3 z-20 text-base'
-        >
-          <div className='w-60'></div>
-          <div className='pl-20 w-3/5'>{time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}</div>
-          <div className='px-2 text-right w-2/5'>SIN DESTINO APARENTE</div>
-        </header>
-      </div>
-      <div className='mt-[4.3rem] pb-6 lg:hidden'>
-        <header
-          className='top-20 left-0 w-full flex 
-      items-start p-1 border-t border-black bg-white gap-3 z-20 text-sm pl-2'
-        >
-          {time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}
-        </header>
-      </div>
-    </>
+    <header
+      className='hidden lg:flex fixed top-2 left-0 w-full 
+items-start p-1 border-t border-black bg-white gap-3 z-20'
+    >
+      <div className='w-60'></div>
+      <div className='pl-12 w-3/5'>{time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}</div>
+    </header>
   )
 }
 
