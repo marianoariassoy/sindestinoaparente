@@ -2,11 +2,14 @@ import Button from '../components/Button'
 import Aside from '../components/Aside'
 import { useDataContext } from '../context/useDataContext'
 import useFetch from '../hooks/useFetch'
+import Loader from '../components/Loader'
 
 const Contact = () => {
   const { lan } = useDataContext()
   const { data, loading } = useFetch(`/about/${lan}`)
+  const { data: texts, loading: textsLoading } = useFetch(`/texts/${lan}`)
 
+  console.log(texts)
   return (
     <Aside
       title={lan === 'ESP' ? 'Acerca de' : 'About'}
@@ -14,6 +17,8 @@ const Contact = () => {
       borderColor='border-tertiary'
       id='acercade'
     >
+      {textsLoading ? <Loader /> : <div className='text-base font-sans leading-5'>{texts[3].description}</div>}
+
       <div className='flex flex-col gap-y-3 border-t border-black pt-6 pr-3 lg:pr-12 pb-12'>
         {!loading &&
           data.map(item => (

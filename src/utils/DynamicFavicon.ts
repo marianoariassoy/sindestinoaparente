@@ -5,7 +5,7 @@ const DynamicFavicon = () => {
     const updateFavicon = () => {
       const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
       const favicon = document.getElementById('favicon') as HTMLLinkElement
-      favicon.href = isDarkMode ? '/favicon-dark.png' : '/favicon-light.png'
+      favicon.href = isDarkMode ? 'favicon-dark.svg' : 'favicon-light.svg'
     }
 
     // Detectar cambios en el tema del sistema
