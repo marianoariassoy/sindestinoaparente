@@ -1,4 +1,4 @@
-import Button from '../components/Button'
+import Button from '../components/ButtonAbout'
 import Aside from '../components/Aside'
 import { useDataContext } from '../context/useDataContext'
 import useFetch from '../hooks/useFetch'
@@ -9,7 +9,6 @@ const Contact = () => {
   const { data, loading } = useFetch(`/about/${lan}`)
   const { data: texts, loading: textsLoading } = useFetch(`/texts/${lan}`)
 
-  console.log(texts)
   return (
     <Aside
       title={lan === 'ESP' ? 'Acerca de' : 'About'}

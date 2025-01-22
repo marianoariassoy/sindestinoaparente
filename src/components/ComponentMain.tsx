@@ -5,6 +5,7 @@ import ComponentInfo from './ComponentInfo'
 import { useDataContext } from '../context/useDataContext'
 import useFetch from '../hooks/useFetch'
 import Loader from './Loader'
+import EditionInfo from './EditionInfo'
 
 const Index = ({ category = 1 }: { category: number }) => {
   const { lan } = useDataContext()
@@ -42,14 +43,29 @@ const Index = ({ category = 1 }: { category: number }) => {
 
   return (
     <section className='flex flex-col-reverse lg:flex-row items-start pt-20 lg:pt-0 lg:pl-60'>
-      {imagesLoading ? (
-        <Loader />
-      ) : (
-        <ComponentImages
-          images={currentImages}
-          edition={edition}
-        />
-      )}
+      <div className='lg:w-[60%] relative'>
+        {imagesLoading ? (
+          <Loader />
+        ) : (
+          <div className='flex flex-col'>
+            {edition &&
+              editions.map(
+                item =>
+                  item.id === edition && (
+                    <EditionInfo
+                      key={item.id}
+                      item={item}
+                    />
+                  )
+              )}
+
+            <ComponentImages
+              images={currentImages}
+              edition={edition}
+            />
+          </div>
+        )}
+      </div>
 
       {textsLoading || editionsLoading ? (
         <Loader />

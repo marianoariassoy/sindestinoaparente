@@ -37,10 +37,18 @@ const AcercaDeItem = ({ data, setEdition }: Props) => {
             onClick={handleButtonClick}
           >
             <h1 className='font-condensed text-xl lg:text-3xl'>{data.title}</h1>
+            {data.subtitle && data.image && !isOpen && (
+              <>
+                <span className='hidden lg:block'>/</span>
+                <span className='flex-1 font-sans text-sm lg:text-base'>{data.subtitle}</span>
+              </>
+            )}
           </button>
 
           {isOpen && (
-            <div className='flex flex-col gap-y-3 pt-3'>
+            <div className='flex flex-col gap-y-3'>
+              <div>{data.subtitle}</div>
+
               {data.image && (
                 <div>
                   <ImageComponent

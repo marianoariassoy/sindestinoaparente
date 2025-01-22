@@ -7,47 +7,43 @@ const ComponentLeft = ({ images, edition }) => {
   const [currentImage, setCurrentImage] = useState(null)
 
   return (
-    <>
-      <div className='lg:w-[60%] relative'>
-        <div className='flex flex-col'>
-          {edition &&
-            images
-              .filter(item => item.edition === edition)
-              .map(item =>
-                item.image ? (
-                  <ItemModal
-                    key={item.id}
-                    src={item.image}
-                    title={item.text}
-                    alt='Imagen'
-                    setCurrentImage={setCurrentImage}
-                  />
-                ) : (
-                  <LabelsItems
-                    key={item.id}
-                    text={item.text}
-                  />
-                )
-              )}
-          {!edition &&
-            images.map(item =>
-              item.image ? (
-                <ItemModal
-                  key={item.id}
-                  src={item.image}
-                  title={item.text}
-                  alt='Imagen'
-                  setCurrentImage={setCurrentImage}
-                />
-              ) : (
-                <LabelsItems
-                  key={item.id}
-                  text={item.text}
-                />
-              )
-            )}
-        </div>
-      </div>
+    <div>
+      {edition &&
+        images
+          .filter(item => item.edition === edition)
+          .map(item =>
+            item.image ? (
+              <ItemModal
+                key={item.id}
+                src={item.image}
+                title={item.text}
+                alt='Imagen'
+                setCurrentImage={setCurrentImage}
+              />
+            ) : (
+              <LabelsItems
+                key={item.id}
+                text={item.text}
+              />
+            )
+          )}
+      {!edition &&
+        images.map(item =>
+          item.image ? (
+            <ItemModal
+              key={item.id}
+              src={item.image}
+              title={item.text}
+              alt='Imagen'
+              setCurrentImage={setCurrentImage}
+            />
+          ) : (
+            <LabelsItems
+              key={item.id}
+              text={item.text}
+            />
+          )
+        )}
 
       {currentImage && (
         <Modal
@@ -55,7 +51,7 @@ const ComponentLeft = ({ images, edition }) => {
           setCurrentImage={setCurrentImage}
         />
       )}
-    </>
+    </div>
   )
 }
 
