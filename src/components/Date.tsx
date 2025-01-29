@@ -26,11 +26,10 @@ const HeaderHome = () => {
 
   return (
     <header
-      className='hidden lg:flex fixed top-2 left-0 w-full 
+      className='hidden lg:flex fixed top-2  w-full 
 items-start p-1 border-t border-black bg-white gap-3 z-20'
     >
-      <div className='w-60'></div>
-      <div className='pl-12 w-3/5'>{time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}</div>
+      <div className='pl-12'>{time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}</div>
     </header>
   )
 }

@@ -43,7 +43,9 @@ const Index = ({ category = 1 }: { category: number }) => {
 
   return (
     <section className='flex flex-col-reverse lg:flex-row items-start pt-20 lg:pt-0 lg:pl-60'>
-      <div className='lg:w-[60%] relative'>
+      <div className='lg:w-[60%] relative lg:h-screen'>
+        <Date />
+
         {imagesLoading ? (
           <Loader />
         ) : (
@@ -55,6 +57,7 @@ const Index = ({ category = 1 }: { category: number }) => {
                     <EditionInfo
                       key={item.id}
                       item={item}
+                      lan={lan}
                     />
                   )
               )}
@@ -66,12 +69,10 @@ const Index = ({ category = 1 }: { category: number }) => {
           </div>
         )}
       </div>
-
-      {textsLoading || editionsLoading ? (
-        <Loader />
-      ) : (
-        <>
-          <Date />
+      <div className='lg:fixed right-0 top-0 w-full lg:w-[33%] lg:pb-12 lg:h-screen overflow-y-auto bg-white z-40 '>
+        {textsLoading || editionsLoading ? (
+          <Loader />
+        ) : (
           <ComponentInfo
             editions={currentEditions}
             texts={currentTexts}
@@ -79,8 +80,8 @@ const Index = ({ category = 1 }: { category: number }) => {
             setEdition={setEdition}
             sectionTitle={sectionTitle}
           />
-        </>
-      )}
+        )}
+      </div>
     </section>
   )
 }

@@ -7,13 +7,11 @@ const Contact = () => {
   const texts = {
     ESP: {
       text1: 'Para consultas generales contáctanos a través de ',
-      text2: 'Suscríbete para recibir novedades',
       text3: 'Seguínos en ',
       text4: 'Colaborá con nosotras'
     },
     ENG: {
       text1: 'To general inquiries, contact us through ',
-      text2: 'Subscribe to receive news',
       text3: 'Follow us on ',
       text4: 'Collaborate with us'
     }
@@ -30,13 +28,12 @@ const Contact = () => {
         <div>
           {lan === 'ESP' ? texts.ESP.text1 : texts.ENG.text1}
           <a
-            href='mailto:sda@gmail.com'
+            href='mailto:sda@sindestinoaparente.xyz'
             className='hover:underline'
           >
-            sda@gmail.com
+            sda@sindestinoaparente.xyz
           </a>
         </div>
-        <div>{lan === 'ESP' ? texts.ESP.text2 : texts.ENG.text2}</div>
         <div>
           {lan === 'ESP' ? texts.ESP.text3 : texts.ENG.text3}
           <a
@@ -55,16 +52,16 @@ const Contact = () => {
           <div>Contacto</div>
           <div className='flex flex-col'>
             <a
-              href='mailto:barrioslab@gmail.com'
+              href='mailto:larisa@sindestinoaparente.xyz'
               className='hover:underline'
             >
-              barrioslab@gmail.com
+              larisa@sindestinoaparente.xyz
             </a>
             <a
-              href='mailto:larisazmud@gmail.com'
+              href='mailto:paula@sindestinoaparente.xyz'
               className='hover:underline'
             >
-              larisazmud@gmail.com
+              paula@sindestinoaparente.xyz
             </a>
           </div>
         </div>

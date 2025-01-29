@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { startOfMonth, endOfMonth, eachDayOfInterval, format, isSameDay, isToday } from 'date-fns'
 import { Event } from '../../types/Types'
+import { useDataContext } from '../../context/useDataContext'
+import { es, enUS } from 'date-fns/locale'
 
 interface CalendarGridProps {
   currentDate: Date
@@ -8,6 +10,9 @@ interface CalendarGridProps {
 }
 
 const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
+  const { lan } = useDataContext()
+  const [selectedLocale, setSelectedLocale] = useState(es)
+
   const days = eachDayOfInterval({
     start: startOfMonth(currentDate),
     end: endOfMonth(currentDate)
@@ -15,10 +20,16 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
 
   const [selectedEvent, setSelectedEvent] = useState('')
 
+  useEffect(() => {
+    if (lan === 'ESP') setSelectedLocale(es)
+    else if (lan === 'ENG') setSelectedLocale(enUS)
+    else setSelectedLocale(es)
+  }, [lan])
+
   return (
     <div
-      className='grid grid-cols-4 lg:grid-cols-7 h-full pb-3 
-    [&>div:nth-child(4n)]:border-r-0 lg:[&>div:nth-child(4n)]:border-r lg:[&>div:nth-child(7n)]:border-r-0 [&>div:nth-child(n+29)]:border-b-0'
+      className='grid grid-cols-3 lg:grid-cols-7 h-full pb-3 
+    [&>div:nth-child(3n)]:border-r-0 lg:[&>div:nth-child(3n)]:border-r lg:[&>div:nth-child(7n)]:border-r-0'
     >
       {days.map((day, index) => {
         const isCurrentDay = isToday(day)
@@ -28,7 +39,7 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
           <div
             key={index}
             className={`aspect-square lg:aspect-auto border-b border-r border-black relative ${
-              isCurrentDay ? 'bg-gray-100' : ''
+              isCurrentDay ? 'bg-primary' : ''
             }`}
           >
             {hasMatchingDate ? (
@@ -40,9 +51,12 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
                     className='h-full w-full'
                   >
                     {event.category === 1 ? (
-                      <>
+                      <div className='p-2'>
+                        <span className='first-letter:uppercase'>
+                          {format(day, 'eeee', { locale: selectedLocale })}
+                        </span>
                         <button
-                          className='text-3xl lg:text-6xl font-condensed text-secondary text-shadow-secondary w-full h-full items-start flex p-2 hover:bg-gray-100 '
+                          className='text-3xl lg:text-6xl font-condensed text-secondary text-shadow-secondary w-full h-full items-start flex  hover:opacity-70'
                           onClick={() => setSelectedEvent(format(day, 'd'))}
                         >
                           {format(day, 'd')}
@@ -67,9 +81,12 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
                             </span>
                           )}
                         </div>
-                      </>
+                      </div>
                     ) : (
-                      <div className='text-secondary text-sm p-2 flex flex-col h-full lg:gap-y-6'>
+                      <div className='text-secondary text-sm p-2 flex flex-col h-full lg:gap-y-1'>
+                        <span className='first-letter:uppercase'>
+                          {format(day, 'eeee', { locale: selectedLocale })}
+                        </span>
                         <span className='font-condensed text-2xl lg:text-4xl'>{format(day, 'd')}</span>
                         <span className='leading-4'>{event.title}</span>
                       </div>
@@ -77,7 +94,10 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
                   </div>
                 ))
             ) : (
-              <span className='text-3xl lg:text-6xl font-condensed p-2 block'>{format(day, 'd')}</span>
+              <div className='flex flex-col p-2'>
+                <span className='first-letter:uppercase'>{format(day, 'eeee', { locale: selectedLocale })}</span>
+                <span className='text-3xl lg:text-6xl font-condensed'>{format(day, 'd')}</span>
+              </div>
             )}
           </div>
         )

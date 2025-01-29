@@ -11,7 +11,7 @@ const ComponentRight = ({ editions, texts, title, setEdition, sectionTitle }) =>
   }, [])
 
   return (
-    <div className='lg:fixed right-0 top-0 w-full lg:w-[33%] lg:pb-12 lg:h-screen overflow-y-auto bg-white z-40'>
+    <>
       <div className='border-t border-black lg:mt-2 py-1 flex justify-between items-start px-3'>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -65,7 +65,7 @@ const ComponentRight = ({ editions, texts, title, setEdition, sectionTitle }) =>
           ))}
         </div>
       )}
-    </div>
+    </>
   )
 }
 
