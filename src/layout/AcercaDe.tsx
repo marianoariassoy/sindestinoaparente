@@ -3,6 +3,7 @@ import Aside from '../components/Aside'
 import { useDataContext } from '../context/useDataContext'
 import useFetch from '../hooks/useFetch'
 import Loader from '../components/Loader'
+import HTML from '../hooks/useHTML'
 
 const Contact = () => {
   const { lan } = useDataContext()
@@ -19,7 +20,9 @@ const Contact = () => {
       {textsLoading ? (
         <Loader />
       ) : (
-        <div className='text-base font-sans leading-5 whitespace-break-spaces'>{texts[3].description}</div>
+        <div className='text-base font-sans leading-5'>
+          <HTML text={texts[3].description} />
+        </div>
       )}
 
       <div className='flex flex-col gap-y-3 border-t border-black pt-6 pr-3 lg:pr-12 pb-12'>

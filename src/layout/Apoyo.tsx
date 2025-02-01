@@ -3,6 +3,7 @@ import { useDataContext } from '../context/useDataContext'
 import { Right } from '../components/icons'
 import useFetch from '../hooks/useFetch'
 import Loader from '../components/Loader'
+import HTML from '../hooks/useHTML'
 
 const Contact = () => {
   const { lan } = useDataContext()
@@ -37,7 +38,9 @@ const Contact = () => {
             {loading ? (
               <Loader />
             ) : (
-              <div className='text-base font-sans leading-5 whitespace-break-spaces'>{data[4].description}</div>
+              <div className='text-base font-sans leading-5'>
+                <HTML text={data[4].description} />
+              </div>
             )}
           </div>
         </div>

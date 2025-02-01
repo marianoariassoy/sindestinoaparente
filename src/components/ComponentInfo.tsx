@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Button from './Button'
 import { Down, Up } from './icons'
+import HTML from '../hooks/useHTML'
 
 const ComponentRight = ({ editions, texts, title, setEdition, sectionTitle }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -57,9 +58,11 @@ const ComponentRight = ({ editions, texts, title, setEdition, sectionTitle }) =>
               key={item.id}
             >
               <div className='flex flex-col gap-y-3 leading-5 max-w-xl text-sm lg:text-base'>
-                <h1 className='font-condensed text-2xl lg:text-3xl indent-9'>{item.title}</h1>
-                {item.subtitle && <h2 className='pl-9 leading-5 whitespace-break-spaces'>{item.subtitle}</h2>}
-                <div className='indent-9 pb-6 whitespace-break-spaces leading-5'>{item.description}</div>
+                <h1 className='font-condensed text-2xl lg:text-3xl'>{item.title}</h1>
+                {item.subtitle && <h2 className='leading-5 whitespace-break-spaces pl-6'>{item.subtitle}</h2>}
+                <div className='pb-6 leading-5'>
+                  <HTML text={item.description} />
+                </div>
               </div>
             </div>
           ))}
