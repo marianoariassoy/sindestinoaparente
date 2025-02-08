@@ -52,12 +52,6 @@ const Contact = () => {
           <div>Contacto</div>
           <div className='flex flex-col'>
             <a
-              href='mailto:larisa@sindestinoaparente.xyz'
-              className='hover:underline'
-            >
-              larisa@sindestinoaparente.xyz
-            </a>
-            <a
               href='mailto:paula@sindestinoaparente.xyz'
               className='hover:underline'
             >

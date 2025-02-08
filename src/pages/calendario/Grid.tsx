@@ -28,8 +28,8 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
 
   return (
     <div
-      className='grid grid-cols-3 lg:grid-cols-7 h-full pb-3 
-    [&>div:nth-child(3n)]:border-r-0 lg:[&>div:nth-child(3n)]:border-r lg:[&>div:nth-child(7n)]:border-r-0'
+      className='grid grid-cols-2 lg:grid-cols-7 pb-3 
+    [&>div:nth-child(2n)]:border-r-0 lg:[&>div:nth-child(2n)]:border-r lg:[&>div:nth-child(7n)]:border-r-0'
     >
       {days.map((day, index) => {
         const isCurrentDay = isToday(day)
@@ -38,9 +38,7 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
         return (
           <div
             key={index}
-            className={`aspect-square lg:aspect-auto border-b border-r border-black relative ${
-              isCurrentDay ? 'bg-primary' : ''
-            }`}
+            className={`aspect-square border-b border-r border-black relative ${isCurrentDay ? 'bg-black/10' : ''}`}
           >
             {hasMatchingDate ? (
               events
@@ -62,9 +60,10 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
                           {format(day, 'd')}
                         </button>
                         <div
-                          className={`absolute z-30 leading-4 top-6 left-6 flex flex-col gap-y-3 text-sm bg-primary border-primary  ${
+                          className={`absolute cursor-pointer z-30 leading-4 top-6 left-6 flex flex-col gap-y-3 text-sm bg-primary border-primary hover:bg-primary/80  ${
                             format(day, 'd') === selectedEvent ? 'block' : 'hidden'
                           }`}
+                          onClick={() => setSelectedEvent(null)}
                         >
                           <span className='font-bold'>{event.title}</span>
                           <span>{event.description}</span>
@@ -83,11 +82,11 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ currentDate, events }) => {
                         </div>
                       </div>
                     ) : (
-                      <div className='text-secondary text-sm p-2 flex flex-col h-full lg:gap-y-1'>
+                      <div className='text-secondary text-sm p-2 flex flex-col h-full'>
                         <span className='first-letter:uppercase'>
                           {format(day, 'eeee', { locale: selectedLocale })}
                         </span>
-                        <span className='font-condensed text-2xl lg:text-4xl'>{format(day, 'd')}</span>
+                        <span className='font-condensed text-2xl lg:text-3xl'>{format(day, 'd')}</span>
                         <span className='leading-4'>{event.title}</span>
                       </div>
                     )}
