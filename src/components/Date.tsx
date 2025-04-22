@@ -25,10 +25,7 @@ const HeaderHome = () => {
   }
 
   return (
-    <header
-      className='hidden lg:flex fixed top-2  w-full 
-items-start p-1 border-t border-black bg-white gap-3 z-20'
-    >
+    <header className='hidden lg:flex fixed top-2  w-full items-start p-1 border-t border-black bg-white/80 backdrop-blur gap-3 z-20'>
       <div className='pl-12'>{time.toLocaleTimeString() + ' UTC-3 ' + getDateToday()}</div>
     </header>
   )

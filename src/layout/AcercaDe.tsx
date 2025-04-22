@@ -21,7 +21,7 @@ const Contact = () => {
         <Loader />
       ) : (
         <div className='text-base font-sans leading-5'>
-          <HTML text={texts[3].description} />
+          <HTML text={texts[0].description} />
         </div>
       )}
 

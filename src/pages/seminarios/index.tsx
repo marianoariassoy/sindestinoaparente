@@ -1,12 +1,15 @@
 import Layout from '../../layout/Layout'
-import ComponentMain from '../../components/ComponentMain'
+import Main from '../../components/Main'
 
-const Index = () => {
+const index = () => {
   return (
     <Layout>
-      <ComponentMain category={1} />
+      <Main
+        item={294}
+        section={1}
+      />
     </Layout>
   )
 }
 
-export default Index
+export default index

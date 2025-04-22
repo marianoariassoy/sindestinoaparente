@@ -39,7 +39,7 @@ const Contact = () => {
               <Loader />
             ) : (
               <div className='text-base font-sans leading-5'>
-                <HTML text={data[4].description} />
+                <HTML text={data[1].description} />
               </div>
             )}
           </div>
