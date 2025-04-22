@@ -16,7 +16,7 @@ const Info = ({ item, lan }: { item: number; lan: string }) => {
   return (
     <section className='p-4 lg:p-8 flex flex-col gap-y-8 my-8'>
       <div>
-        <h1 className='underline text-2xl lg:text-3xl text-center'>{data.title}</h1>
+        <h1 className='underline text-2xl lg:text-3xl text-center uppercase'>{data.title}</h1>
         {data.subtitle && <h2 className='underline text-xl lg:text-3xl text-center'>{data.subtitle}</h2>}
       </div>
       {(data.edition || data.date || data.hour) && (
@@ -24,19 +24,19 @@ const Info = ({ item, lan }: { item: number; lan: string }) => {
           {data.edition && (
             <div>
               <h2 className='underline'>{lan === 'ESP' ? 'Nº de Edición' : 'Edition Number'}</h2>
-              <span className='font-bold'>{data.edition}</span>
+              <span>{data.edition}</span>
             </div>
           )}
           {data.date && (
             <div>
               <h2 className='underline'>{lan === 'ESP' ? 'Fecha' : 'Date'}</h2>
-              <span className='font-bold'>{data.date}</span>
+              <span>{data.date}</span>
             </div>
           )}
           {data.hour && (
             <div>
               <h2 className='underline'>{lan === 'ESP' ? 'Hora y Lugar' : 'Time and Place'}</h2>
-              <span className='font-bold'>{data.hour}</span>
+              <span>{data.hour}</span>
             </div>
           )}
         </div>
@@ -46,19 +46,19 @@ const Info = ({ item, lan }: { item: number; lan: string }) => {
           {data.participate && (
             <div>
               <h2 className='underline'>{lan === 'ESP' ? 'Participan' : 'Participate'}</h2>
-              <span className='font-bold'>{data.participate}</span>
+              <span>{data.participate}</span>
             </div>
           )}
           {data.language && (
             <div>
               <h2 className='underline'>{lan === 'ESP' ? 'Idioma' : 'Language'}</h2>
-              <span className='font-bold'>{data.language}</span>
+              <span>{data.language}</span>
             </div>
           )}
           {data.price && (
             <div>
               <h2 className='underline'>{lan === 'ESP' ? 'Precio' : 'Price'}</h2>
-              <span className='font-bold'>{data.price}</span>
+              <span>{data.price}</span>
             </div>
           )}
         </div>
