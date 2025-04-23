@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import useFetch from '../hooks/useFetch'
-import Loader from './Loader'
+import { BeatLoader } from 'react-spinners'
 import ItemModal from './ImageModal'
 import Modal from './Modal'
 import LabelsItems from './LabelsItems'
@@ -9,7 +9,13 @@ const Presentation = ({ item, lan }: { item: number; lan: string }) => {
   const { data, loading } = useFetch(`/items/${item}/images/${lan}`)
   const [currentImage, setCurrentImage] = useState(null)
 
-  if (loading) return <Loader />
+  if (loading)
+    return (
+      <div className='px-3'>
+        <BeatLoader />
+      </div>
+    )
+
   if (!data) return null
 
   return (
