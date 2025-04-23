@@ -1,12 +1,9 @@
-import Aside from '../components/Aside'
-import { useDataContext } from '../context/useDataContext'
-import { Right } from '../components/icons'
-import useFetch from '../hooks/useFetch'
-import Loader from '../components/Loader'
-import HTML from '../hooks/useHTML'
+import { Right } from '../../components/icons'
+import { BeatLoader } from 'react-spinners'
+import useFetch from '../../hooks/useFetch'
+import HTML from '../../hooks/useHTML'
 
-const Contact = () => {
-  const { lan } = useDataContext()
+const Aside = ({ lan }: { lan: string }) => {
   const { data, loading } = useFetch(`/texts/${lan}`)
 
   const texts = {
@@ -21,22 +18,18 @@ const Contact = () => {
         'If you want to explore more ways to support Cetácea, don’t hesitate to get in touch with our Productora and Directora de Desarrollo.'
     }
   }
+
   return (
-    <Aside
-      title={lan === 'ESP' ? 'Apoyo' : 'Support'}
-      bgColor='#ed6e58'
-      borderColor='border-secondary'
-      id='apoyo'
-    >
-      <div className='flex gap-x-3 border-t border-black pt-6 text-base pr-6'>
+    <div className='mt-2 flex flex-col gap-y-3 border-t border-black'>
+      <div className='flex gap-x-3 pt-6 text-base pr-6 pb-8'>
         <div className='w-6 transition-all pt-[0.6rem]'>
           <Right />
         </div>
         <div className='flex-1 flex flex-col gap-y-1'>
-          <h1 className='font-condensed text-2xl lg:text-4xl'>Sin Destino Aparente </h1>
+          <h1 className='font-condensed text-2xl lg:text-4xl'>Sin Destino Aparente</h1>
           <div className='flex flex-col gap-y-3 [&>div>p]:indent-6 [&>div>h3]:indent-6'>
             {loading ? (
-              <Loader />
+              <BeatLoader />
             ) : (
               <div className='text-base font-sans leading-5'>
                 <HTML text={data[1].description} />
@@ -52,7 +45,6 @@ const Contact = () => {
           <h2 className='font-condensed text-2xl lg:text-4xl'>{texts[lan].title2}</h2>
           <div className='flex justify-between gap-x-12'>
             <p className=''>{texts[lan].text1}</p>
-
             <div className='flex flex-col'>
               <a
                 href='mailto:barrioslab@gmail.com'
@@ -70,8 +62,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </Aside>
+    </div>
   )
 }
 
-export default Contact
+export default Aside

@@ -8,6 +8,7 @@ import ResidenciasDetalles from './pages/residencias/Details'
 import Cenas from './pages/cenas'
 import CenasDetalles from './pages/cenas/Details'
 import Calendario from './pages/calendario'
+import Apoyo from './pages/apoyo'
 
 function App() {
   return (
@@ -47,6 +48,10 @@ function App() {
       <Route
         path='/calendario'
         component={Calendario}
+      />
+      <Route
+        path='/apoyo'
+        component={Apoyo}
       />
 
       <Route component={Landing} />

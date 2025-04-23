@@ -33,7 +33,7 @@ export const menu = [
     title_es: 'Apoyo',
     title_en: 'Support',
     url: '/apoyo',
-    tag: '#apoyo'
+    tag: ''
   },
   {
     title_es: 'Contacto',
