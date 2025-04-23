@@ -4,9 +4,20 @@ import { Down, Up } from './icons'
 import HTML from '../hooks/useHTML'
 import useFetch from '../hooks/useFetch'
 import BeatLoader from 'react-spinners/BeatLoader'
+import Image from './Image'
 
-const ComponentRight = ({ section, item, lan }: { section: number; item: number; lan: string }) => {
-  const { data: categories, loading: categoriesLoading } = useFetch(`/categories/${section}/${lan}`)
+const ComponentRight = ({
+  section,
+  item,
+  lan,
+  title
+}: {
+  section: number
+  item: number
+  lan: string
+  title: boolean
+}) => {
+  const { data: categories, loading: categoriesLoading } = useFetch(`/sections/${section}/categories/${lan}`)
   const { data, loading } = useFetch(`/items/${item}/details/${lan}`)
   const [isOpen, setIsOpen] = useState(false)
 
@@ -55,12 +66,23 @@ const ComponentRight = ({ section, item, lan }: { section: number; item: number;
               <BeatLoader />
             </div>
           ) : (
-            <div className='lg:border-t border-black pt-3'>
+            <div className='lg:border-t border-black pt-4'>
               <div className='flex flex-col gap-y-3 leading-5 max-w-xl text-sm lg:text-base'>
-                <h1 className='font-condensed text-2xl lg:text-3xl'>{data.title}</h1>
-                {data.subtitle && <h2 className='leading-5 whitespace-break-spaces pl-6'>{data.subtitle}</h2>}
-
-                <div className='pb-6 leading-5'>
+                {title && (
+                  <div>
+                    <h1 className='font-condensed text-2xl lg:text-3xl'>{data.title}</h1>
+                    {data.subtitle && <h2 className='leading-5 whitespace-break-spaces pl-6 mt-2'>{data.subtitle}</h2>}
+                  </div>
+                )}
+                {data.image && (
+                  <div className='w-full max-w-sm'>
+                    <Image
+                      src={data.image}
+                      alt={data.title}
+                    />
+                  </div>
+                )}
+                <div className='pb-4 leading-5 whitespace-break-spaces'>
                   <HTML text={data.description} />
                 </div>
               </div>

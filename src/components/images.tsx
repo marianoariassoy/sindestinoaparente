@@ -6,7 +6,7 @@ import Modal from './Modal'
 import LabelsItems from './LabelsItems'
 
 const Presentation = ({ item, lan }: { item: number; lan: string }) => {
-  const { data, loading } = useFetch(`/images/${item}/${lan}`)
+  const { data, loading } = useFetch(`/items/${item}/images/${lan}`)
   const [currentImage, setCurrentImage] = useState(null)
 
   if (loading) return <Loader />

@@ -50,7 +50,7 @@ const AcercaDeItem = ({ data, setEdition }: Props) => {
               <div>{data.subtitle}</div>
 
               {data.image && (
-                <div>
+                <div className='w-full max-w-sm'>
                   <ImageComponent
                     src={data.image}
                     alt={data.title}

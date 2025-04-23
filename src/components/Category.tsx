@@ -13,7 +13,7 @@ interface Props {
 }
 
 const AcercaDeItem = ({ data, lan }: Props) => {
-  const { data: items, loading: itemsLoading } = useFetch(`/items/${data.id}/${lan}`)
+  const { data: items, loading: itemsLoading } = useFetch(`/categories/${data.id}/items/${lan}`)
   const [isOpen, setIsOpen] = useState(false)
   const [location] = useLocation()
   const id = location.split('/')[2]

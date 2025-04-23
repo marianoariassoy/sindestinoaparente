@@ -1,4 +1,4 @@
-import Button from '../components/ButtonAbout'
+import AboutItem from '../components/AboutItem'
 import Aside from '../components/Aside'
 import { useDataContext } from '../context/useDataContext'
 import useFetch from '../hooks/useFetch'
@@ -28,7 +28,7 @@ const Contact = () => {
       <div className='flex flex-col gap-y-3 border-t border-black pt-6 pr-3 lg:pr-12 pb-12'>
         {!loading &&
           data.map(item => (
-            <Button
+            <AboutItem
               key={item.id}
               data={item}
             />

@@ -14,13 +14,14 @@ const Info = ({ item, lan }: { item: number; lan: string }) => {
   if (!data) return null
 
   return (
-    <section className='p-4 lg:p-8 flex flex-col gap-y-8 my-8'>
+    <section className='p-4 lg:p-8 flex flex-col gap-y-8 mt-8 mb-4'>
       <div>
         <h1 className='underline text-2xl lg:text-3xl text-center uppercase'>{data.title}</h1>
-        {data.subtitle && <h2 className='underline text-xl lg:text-3xl text-center'>{data.subtitle}</h2>}
+        {data.subtitle && <h2 className='underline text-xl lg:text-3xl text-center '>{data.subtitle}</h2>}
       </div>
+
       {(data.edition || data.date || data.hour) && (
-        <div className='grid grid-cols-3 gap-2'>
+        <div className='grid grid-cols-3 gap-2 leading-5'>
           {data.edition && (
             <div>
               <h2 className='underline'>{lan === 'ESP' ? 'Nº de Edición' : 'Edition Number'}</h2>
@@ -42,7 +43,7 @@ const Info = ({ item, lan }: { item: number; lan: string }) => {
         </div>
       )}
       {(data.participate || data.language || data.price) && (
-        <div className='grid grid-cols-3 gap-2'>
+        <div className='grid grid-cols-3 gap-2 leading-5'>
           {data.participate && (
             <div>
               <h2 className='underline'>{lan === 'ESP' ? 'Participan' : 'Participate'}</h2>
@@ -63,8 +64,6 @@ const Info = ({ item, lan }: { item: number; lan: string }) => {
           )}
         </div>
       )}
-
-      {data.description && <div className='text-sm lg:text-base whitespace-pre-line'>{data.description}</div>}
     </section>
   )
 }

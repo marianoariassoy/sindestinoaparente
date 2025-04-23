@@ -9,7 +9,6 @@ const DetailsMain = () => {
     <Layout>
       <Details
         id={id}
-        info={295}
         section={2}
       />
     </Layout>
