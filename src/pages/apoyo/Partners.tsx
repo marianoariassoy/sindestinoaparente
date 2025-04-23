@@ -9,6 +9,8 @@ const Partners = () => {
       <BeatLoader />
     </div>
 
+  if (!data) return null
+
   return (
     <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-4 lg:pt-8 max-w-4xl'>
       {data.map((partner, index) => (
