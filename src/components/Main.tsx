@@ -22,7 +22,6 @@ const Index = ({ item, section }: { item: number; section: number }) => {
             section={section}
             item={item}
             lan={lan}
-            title={true}
           />
         </div>
       </section>

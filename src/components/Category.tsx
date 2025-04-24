@@ -53,10 +53,6 @@ const AcercaDeItem = ({ data, lan }: Props) => {
                   >
                     {item.title}
                   </Link>
-                  <Participantes
-                    lan={lan}
-                    item={item.id}
-                  />
                 </li>
               ))}
             </ul>

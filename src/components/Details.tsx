@@ -5,7 +5,7 @@ import Images from './images'
 import Info from './Info'
 import Header from './Header'
 
-const Details = ({ id, section }: { id: number; section: number }) => {
+const Details = ({ id, section, info }: { id: number; section: number; info: number }) => {
   const { lan } = useDataContext()
 
   return (
@@ -25,9 +25,8 @@ const Details = ({ id, section }: { id: number; section: number }) => {
         <div className='lg:fixed right-0 top-0 w-full lg:w-[33%] lg:pb-12 lg:h-screen overflow-y-auto bg-white z-40'>
           <Info
             section={section}
-            item={id}
+            item={info}
             lan={lan}
-            title={false}
           />
         </div>
       </section>

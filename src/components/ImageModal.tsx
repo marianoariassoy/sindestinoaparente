@@ -26,7 +26,7 @@ const ImageComponent = ({ src, alt, title, setCurrentImage }: Props) => {
       <BeatLoader />
     </article>
   ) : (
-    <article className={`relative ${isPortrait ? 'w-full' : 'w-[60%]'}`}>
+    <article className={`relative ${isPortrait ? 'w-full' : 'w-[60%]'} `}>
       <button
         className='absolute top-0 left-0 w-full h-full'
         onClick={() => setCurrentImage(src)}
@@ -36,7 +36,6 @@ const ImageComponent = ({ src, alt, title, setCurrentImage }: Props) => {
         alt={alt}
         className='w-full'
       />
-      {title && <div className='py-2 text-sm'>{title}</div>}
     </article>
   )
 }
