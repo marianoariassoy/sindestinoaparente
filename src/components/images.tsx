@@ -18,16 +18,15 @@ const Presentation = ({ item, lan }: { item: number; lan: string }) => {
     )
 
   if (!data) return null
-
   return (
     <>
       <div className='pb-12'>
         {data.map(item => (
           <article
             key={item.id}
-            className='flex flex-col gap-y-8 text-center py-4 lg:py-8'
+            className='flex flex-col'
           >
-            {item.title && <h1 className='font-condensed text-2xl lg:text-3xl underline'>{item.title}</h1>}
+            {item.title && <h1 className='text-center font-condensed text-2xl lg:text-3xl underline'>{item.title}</h1>}
             {item.image && (
               <div className='flex justify-center'>
                 <ItemModal
@@ -43,7 +42,7 @@ const Presentation = ({ item, lan }: { item: number; lan: string }) => {
               <LabelsItems text={item.text} />
             ) : (
               item.text && (
-                <div className='px-4 lg:px-12'>
+                <div className='px-4 lg:px-12 my-4 lg:my-8'>
                   <HTML text={item.text} />
                 </div>
               )
