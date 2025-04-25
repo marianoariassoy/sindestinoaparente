@@ -8,7 +8,7 @@ interface Props {
   setCurrentImage: (image: string) => void
 }
 
-const ImageComponent = ({ src, alt, title, setCurrentImage }: Props) => {
+const ImageComponent = ({ src, alt, setCurrentImage }: Props) => {
   const [isLoading, setIsLoading] = useState(true)
   const [isPortrait, setIsPortrait] = useState(true)
 

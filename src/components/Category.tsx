@@ -3,7 +3,6 @@ import { Right } from './icons'
 import useFetch from '../hooks/useFetch'
 import { BeatLoader } from 'react-spinners'
 import { Link, useLocation } from 'wouter'
-import Participantes from './Participantes'
 
 interface Props {
   data: {
