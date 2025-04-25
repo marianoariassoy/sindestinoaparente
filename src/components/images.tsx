@@ -25,7 +25,7 @@ const Presentation = ({ item, lan }: { item: number; lan: string }) => {
         {data.map(item => (
           <article
             key={item.id}
-            className='flex flex-col gap-y-4 text-center'
+            className='flex flex-col gap-y-8 text-center py-4 lg:py-8'
           >
             {item.title && <h1 className='font-condensed text-2xl lg:text-3xl underline'>{item.title}</h1>}
             {item.image && (
@@ -39,12 +39,11 @@ const Presentation = ({ item, lan }: { item: number; lan: string }) => {
                 />
               </div>
             )}
-
             {item.note ? (
               <LabelsItems text={item.text} />
             ) : (
               item.text && (
-                <div className='p-4 lg:px-12 '>
+                <div className='px-4 lg:px-12'>
                   <HTML text={item.text} />
                 </div>
               )
