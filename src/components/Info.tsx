@@ -77,7 +77,7 @@ const ComponentRight = ({ section, item, lan }: { section: number; item: number;
                     />
                   </div>
                 )}
-                <div className='pb-4 leading-5 whitespace-break-spaces'>
+                <div className='pb-4 whitespace-break-spaces'>
                   <HTML text={data.description} />
                 </div>
               </div>
