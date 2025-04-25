@@ -26,7 +26,9 @@ const Presentation = ({ item, lan }: { item: number; lan: string }) => {
             key={item.id}
             className='flex flex-col'
           >
-            {item.title && <h1 className='text-center font-condensed text-2xl lg:text-3xl underline'>{item.title}</h1>}
+            {item.title && (
+              <h1 className='text-center font-condensed text-2xl lg:text-3xl underline mt-8'>{item.title}</h1>
+            )}
             {item.image && (
               <div className='flex justify-center'>
                 <ItemModal
