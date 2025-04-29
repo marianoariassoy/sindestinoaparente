@@ -29,6 +29,7 @@ const Calendar: React.FC = () => {
           <Grid
             currentDate={currentDate}
             events={data}
+            lan={lan}
           />
         )}
       </section>

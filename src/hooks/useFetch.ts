@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-// const apiUrl = 'http://localhost/sites/sindestino-backend/api'
 const apiUrl = 'https://sindestinoaparente.xyz/backend-new/api'
 import axios from 'axios'
 
